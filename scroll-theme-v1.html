@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alya & Rizky — 14 February 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ===== TOKENS ===== */
+:root{--ivory:#f6f0e6;--warm:#fbf8f2;--champ:#e8d9bd;--gold:#b8955a;--char:#2a2624;--rose:#c99a94;--bg:var(--ivory);--ink:var(--char);--card:rgba(255,255,255,.55);--line:rgba(184,149,90,.4);
+--serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1917;--ink:#f1e9da;--card:rgba(255,255,255,.06);--warm:#24201d;--champ:#3a322a}}
+:root[data-theme="dark"]{--bg:#1c1917;--ink:#f1e9da;--card:rgba(255,255,255,.06);--warm:#24201d;--champ:#3a322a}
+/* ===== BASE ===== */
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html.lenis{height:auto}
+body{background:var(--bg);color:var(--ink);font:300 16px/1.7 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;z-index:90;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:300;line-height:1}
+h2{font-size:clamp(2.6rem,8vw,6rem);letter-spacing:-.02em}
+em{font-style:italic;color:var(--gold)}
+.eyebrow{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.4rem}
+section{position:relative;padding:clamp(5rem,14vw,11rem) clamp(1.2rem,6vw,6rem)}
+.w{max-width:1200px;margin:auto}
+.sep{display:flex;align-items:center;gap:1rem;color:var(--gold);margin:2rem 0}.sep::before,.sep::after{content:"";height:1px;flex:1;background:var(--line)}
+.shine{background:linear-gradient(100deg,var(--gold) 20%,#f3e2b8 45%,var(--gold) 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:-250% 0}}
+.w-i{display:inline-block;will-change:transform}
+.glass{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:2px;box-shadow:0 30px 60px -30px rgba(42,38,36,.25)}
+.btn{display:inline-block;padding:1.1rem 2.6rem;border:1px solid var(--gold);background:transparent;color:var(--ink);font:400 .72rem var(--sans);letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:background .5s,color .5s;will-change:transform}
+.btn:hover{background:var(--gold);color:var(--warm)}
+#glow{position:fixed;left:0;top:0;width:380px;height:380px;margin:-190px 0 0 -190px;border-radius:50%;background:radial-gradient(circle,rgba(201,154,148,.28),transparent 65%);pointer-events:none;z-index:80;mix-blend-mode:multiply}
+@media(prefers-color-scheme:dark){#glow{mix-blend-mode:screen}}
+@media(hover:none){#glow{display:none}}
+/* ===== HERO ===== */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:0 1rem;color:#fbf8f2;background:#2a2624}
+.hero .bg{position:absolute;inset:-12% 0;background:radial-gradient(60% 50% at 30% 30%,rgba(201,154,148,.6),transparent 70%),radial-gradient(50% 60% at 75% 70%,rgba(184,149,90,.55),transparent 70%),linear-gradient(160deg,#4a3d38,#1f1b19);will-change:transform}
+.hero .vig{position:absolute;inset:0;background:radial-gradient(transparent 40%,rgba(0,0,0,.55))}
+.hero h1{font-size:clamp(4rem,17vw,13rem);font-weight:300;letter-spacing:-.03em;position:relative}
+.hero h1 .amp{font-style:italic;color:#e8d9bd;font-size:.6em;display:block;margin:-.1em 0}
+.hero p{position:relative;letter-spacing:.35em;text-transform:uppercase;font-size:.72rem}
+.hero .arc{position:absolute;left:50%;top:50%;width:min(80vw,640px);aspect-ratio:1;translate:-50% -50%;border:1px solid rgba(232,217,189,.35);border-radius:50%;will-change:transform}
+.pt{position:absolute;width:5px;height:5px;border-radius:50%;background:#e8d9bd;opacity:.6}
+.scroll{position:absolute;bottom:2rem;left:50%;width:1px;height:60px;background:linear-gradient(#e8d9bd,transparent)}
+/* ===== COUPLE ===== */
+.couple .w{display:grid;gap:3rem;grid-template-columns:1fr}
+@media(min-width:800px){.couple .w{grid-template-columns:1fr 1fr;gap:6rem}.couple .p2{margin-top:8rem}}
+.por{aspect-ratio:3/4;position:relative;overflow:hidden;border-radius:999px 999px 2px 2px;display:grid;place-items:center;font:italic 300 9rem var(--serif);color:rgba(251,248,242,.85)}
+.p1 .por{background:radial-gradient(at 30% 20%,#e7c3bd,transparent 60%),linear-gradient(#b98a85,#6f524e)}
+.p2 .por{background:radial-gradient(at 70% 20%,#f1dfb6,transparent 60%),linear-gradient(#a98853,#5c4a2e)}
+.couple h3{font-size:3rem;margin:1.5rem 0 .5rem}.couple p{max-width:34ch}
+/* ===== TIMELINE (pinned) ===== */
+.tl{background:var(--warm);height:100svh;padding:0;display:grid;place-items:center;overflow:hidden}
+.tl .yr{position:absolute;left:50%;top:50%;translate:-50% -50%;font:300 clamp(10rem,45vw,38rem)/1 var(--serif);color:transparent;-webkit-text-stroke:1px var(--line);white-space:nowrap}
+.st{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:2rem;opacity:0}
+.st div{max-width:42ch}.st h3{font-size:clamp(2.2rem,6vw,4.5rem);margin:.5rem 0 1rem}
+.bar{position:absolute;left:8%;right:8%;bottom:8%;height:1px;background:var(--line)}.bar i{display:block;height:100%;background:var(--gold);transform-origin:0 0;transform:scaleX(0)}
+/* ===== JOURNEY (horizontal) ===== */
+.hz{padding:0;height:100svh;overflow:hidden;display:flex;align-items:center}
+.trk{display:flex;gap:6vw;padding:0 8vw;will-change:transform}
+.pn{flex:0 0 min(78vw,520px);padding:2.4rem;min-height:340px;display:flex;flex-direction:column;justify-content:space-between}
+.pn:nth-child(even){margin-top:8rem}.pn:nth-child(odd){margin-bottom:6rem}
+.pn b{font:italic 300 4rem var(--serif);color:var(--rose)}.pn h3{font-size:2.2rem;margin:.6rem 0}
+.hz .ti{position:absolute;top:12%;left:8vw;z-index:2}
+/* ===== GALLERY stack ===== */
+.gal{height:100svh;padding:0;display:grid;place-items:center;overflow:hidden;background:var(--champ)}
+.gal h2{position:absolute;top:8%;left:50%;translate:-50% 0;white-space:nowrap}
+.cd{position:absolute;width:min(70vw,340px);aspect-ratio:3/4;border:10px solid var(--warm);box-shadow:0 40px 70px -25px rgba(0,0,0,.4);display:flex;align-items:flex-end;padding:1.2rem;font:italic 1.5rem var(--serif);color:#fbf8f2;transition:scale .6s;will-change:transform}
+.cd:hover{scale:1.05}
+.cd:nth-of-type(1){background:linear-gradient(160deg,#d9a8a1,#6f524e)}.cd:nth-of-type(2){background:linear-gradient(200deg,#e5cf9d,#7d6338)}.cd:nth-of-type(3){background:linear-gradient(140deg,#8d7f76,#2a2624)}.cd:nth-of-type(4){background:linear-gradient(190deg,#f0d5ce,#b98a85)}.cd:nth-of-type(5){background:linear-gradient(150deg,#c8b48a,#5c4a2e)}
+/* ===== ENGAGEMENT / DETAILS ===== */
+.eng{background:var(--char);color:#f1e9da;overflow:hidden}
+.eng .mask{clip-path:inset(0 100% 0 0);background:linear-gradient(120deg,#c99a94,#7d6338);aspect-ratio:16/9;margin-bottom:3rem;display:grid;place-items:center;font:italic 300 clamp(2rem,6vw,5rem) var(--serif);color:#fbf8f2;text-align:center}
+.eng p{max-width:60ch}
+.det{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:4rem}
+.det>div{padding:2.2rem}.det h3{font-size:2rem;margin:.4rem 0}
+.cdn{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;text-align:center;margin-top:4rem}
+.cdn div{padding:1.6rem .4rem}.cdn b{display:block;font:300 clamp(2.4rem,9vw,6rem)/1 var(--serif)}.cdn span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.sw{display:flex;gap:1rem;margin-top:1.5rem}.sw i{width:56px;height:56px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line)}
+.map{margin-top:2rem;height:300px;position:relative;overflow:hidden;background:repeating-linear-gradient(35deg,transparent 0 40px,var(--line) 40px 41px),repeating-linear-gradient(-55deg,transparent 0 60px,var(--line) 60px 61px),var(--champ)}
+.map::after{content:"Interactive map — coming soon";position:absolute;inset:auto 0 1rem;text-align:center;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
+.pin{position:absolute;left:50%;top:42%;width:22px;height:22px;background:var(--rose);border-radius:50% 50% 50% 0;rotate:-45deg}
+.sch li{list-style:none;display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+.sch time{font:italic 2rem var(--serif);color:var(--gold)}
+/* ===== QUOTE ===== */
+.qt{min-height:100svh;display:grid;place-items:center;text-align:center}
+.qt blockquote{font:300 clamp(2.2rem,7vw,5.5rem)/1.1 var(--serif);max-width:18em}.qt .w-i{opacity:.12}
+/* ===== FAMILY / RSVP / GIFT / WISH / FAQ ===== */
+.fam{display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.fam h3{font-size:2rem;margin-bottom:.8rem}
+.rsvp{background:var(--warm)}
+form{display:grid;gap:1.4rem;max-width:620px;margin:3rem 0 0 auto}
+input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:.9rem 0;color:var(--ink);font:300 1rem var(--sans);outline:0;border-radius:0}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+option{color:#2a2624}
+.gift{text-align:center}.gift .glass{display:inline-block;padding:2rem 3rem;margin-top:2rem;text-align:left}
+.wl{display:grid;gap:1rem;margin-top:2rem}.wl .glass{padding:1.4rem 1.8rem}.wl b{font:italic 1.6rem var(--serif)}
+details{border-bottom:1px solid var(--line);padding:1.4rem 0}summary{cursor:pointer;font:300 1.8rem var(--serif);list-style:none}summary::after{content:"+";float:right;color:var(--gold)}details[open] summary::after{content:"–"}details p{margin-top:.8rem;max-width:56ch}
+.close{min-height:100svh;display:grid;place-items:center;text-align:center;background:linear-gradient(var(--bg),var(--champ))}
+.close h2{font-size:clamp(3rem,11vw,9rem)}
+footer{background:var(--char);color:#f1e9da;text-align:center;padding:6rem 1rem 4rem;overflow:hidden}
+footer .big{font:italic 300 clamp(5rem,26vw,22rem)/.9 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(232,217,189,.4)}
+footer small{display:block;margin-top:2rem;letter-spacing:.3em;text-transform:uppercase;font-size:.65rem;opacity:.6}
+@media(prefers-reduced-motion:reduce){.shine{animation:none}}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+
+<!-- 1 HERO -->
+<header class="hero">
+  <div class="bg"></div><div class="arc"></div><div class="vig"></div>
+  <div style="position:relative">
+    <p class="h-in">Together with their families</p>
+    <h1 data-split><span>Alya</span><span class="amp">&amp;</span><span>Rizky</span></h1>
+    <p class="h-in" style="margin-top:2.4rem">14 · 02 · 2027 &nbsp;—&nbsp; Jakarta</p>
+  </div>
+  <div class="scroll"></div>
+</header>
+
+<!-- 2 COUPLE -->
+<section class="couple"><div class="w">
+  <div class="p1"><div class="por" data-mask><span>A</span></div><span class="eyebrow" style="margin-top:2rem">The Bride</span><h3 data-r>Alya Putri</h3><p data-r>A curator of quiet moments, who finds poetry in morning light, old bookshops and the people she loves.</p></div>
+  <div class="p2"><div class="por" data-mask><span>R</span></div><span class="eyebrow" style="margin-top:2rem">The Groom</span><h3 data-r>Rizky Pratama</h3><p data-r>An architect of small kindnesses, steady as a lighthouse, and forever the first to make her laugh.</p></div>
+</div></section>
+
+<!-- 3 TIMELINE: story + first meeting -->
+<section class="tl" id="tl">
+  <div class="yr"><span id="yr">2019</span></div>
+  <div class="st"><div><span class="eyebrow">First Meeting</span><h3>A rainy afternoon, one shared umbrella</h3><p>In a Bandung café, two strangers reached for the last table — and stayed for the whole conversation.</p></div></div>
+  <div class="st"><div><span class="eyebrow">Our Story</span><h3>Letters across two cities</h3><p>Long distance taught us patience, and that home is a person, not a place.</p></div></div>
+  <div class="st"><div><span class="eyebrow">Our Story</span><h3>Learning each other's silence</h3><p>New apartment, tangled playlists, and a quiet certainty that grew every day.</p></div></div>
+  <div class="st"><div><span class="eyebrow">Our Story</span><h3>Yes, in every language</h3><p>On a hilltop at sunset, he asked. She had already said yes a thousand times.</p></div></div>
+  <div class="bar"><i></i></div>
+</section>
+
+<!-- 5 JOURNEY horizontal -->
+<section class="hz" id="hz">
+  <h2 class="ti">Our <em>journey</em></h2>
+  <div class="trk">
+    <div style="flex:0 0 40vw"></div>
+    <div class="pn glass"><b>01</b><div><h3>Hello</h3><p>Coffee, rain, and a number scribbled on a napkin.</p></div></div>
+    <div class="pn glass"><b>02</b><div><h3>Adventures</h3><p>Night trains, mountain mornings, and getting happily lost.</p></div></div>
+    <div class="pn glass"><b>03</b><div><h3>Home</h3><p>Two toothbrushes, one shelf of books, a shared life.</p></div></div>
+    <div class="pn glass"><b>04</b><div><h3>Forever</h3><p>Every road led here, to you.</p></div></div>
+  </div>
+</section>
+
+<!-- 6 GALLERY -->
+<section class="gal" id="gal">
+  <h2 style="z-index:0">Moments</h2>
+  <div class="cd">Golden hour</div><div class="cd">Bandung, 2019</div><div class="cd">Midnight train</div><div class="cd">Sunday slow</div><div class="cd">The question</div>
+</section>
+
+<!-- 7 ENGAGEMENT -->
+<section class="eng"><div class="w">
+  <span class="eyebrow">The Engagement</span>
+  <div class="mask" id="mask">She said yes.</div>
+  <p data-r>On a quiet hilltop above the clouds, Rizky knelt with his grandmother's ring. Surrounded by those who raised them, the question became a promise — and the promise became a date.</p>
+</div></section>
+
+<!-- 8-13 DETAILS -->
+<section><div class="w">
+  <span class="eyebrow">The Celebration</span><h2 data-split>Join us for <em>the day</em></h2>
+  <div class="det">
+    <div class="glass" data-r><span class="eyebrow">Event</span><h3>Akad &amp; Reception</h3><p>Sunday, 14 February 2027<br>Ceremony 09:00 · Reception 18:00</p></div>
+    <div class="glass" data-r><span class="eyebrow">Venue</span><h3>Grand Ballroom Jakarta</h3><p>Jl. Jenderal Sudirman, Jakarta Pusat. Valet and shuttle available.</p></div>
+    <div class="glass" data-r><span class="eyebrow">Dress Code</span><h3>Soft formal</h3><p>Champagne, ivory &amp; dusty rose.</p><div class="sw"><i style="background:#e8d9bd"></i><i style="background:#f6f0e6"></i><i style="background:#c99a94"></i></div></div>
+  </div>
+  <div class="cdn" id="cdn">
+    <div class="glass"><b data-u="d">0</b><span>Days</span></div><div class="glass"><b data-u="h">0</b><span>Hours</span></div><div class="glass"><b data-u="m">0</b><span>Minutes</span></div><div class="glass"><b data-u="s">0</b><span>Seconds</span></div>
+  </div>
+  <div class="map glass" data-r><div class="pin"></div></div>
+  <ul class="sch" style="margin-top:4rem;padding:0">
+    <li data-r><time>09:00</time><span>Akad Nikah — intimate family ceremony</span></li>
+    <li data-r><time>17:30</time><span>Guests arrive, welcome drinks</span></li>
+    <li data-r><time>18:30</time><span>Reception, first dance &amp; dinner</span></li>
+    <li data-r><time>21:30</time><span>Candlelit farewell</span></li>
+  </ul>
+</div></section>
+
+<!-- 14 QUOTE -->
+<section class="qt"><blockquote id="qt" data-words>“I have found the one whom my soul loves, and I will hold on to her, and never let go.”<br><em style="font-size:.4em;font-style:normal;letter-spacing:.3em">— SONG OF SOLOMON</em></blockquote></section>
+
+<!-- 15 FAMILY -->
+<section style="background:var(--warm)"><div class="w">
+  <span class="eyebrow">With love from</span><h2 data-r>Our <em>families</em></h2><div class="sep" data-r>✦</div>
+  <div class="fam">
+    <div data-r><h3>Family of the Bride</h3><p>Bapak Hendra Putri<br>&amp; Ibu Sari Dewi</p></div>
+    <div data-r><h3>Family of the Groom</h3><p>Bapak Agus Pratama<br>&amp; Ibu Lestari Wulan</p></div>
+  </div>
+</div></section>
+
+<!-- 16 RSVP -->
+<section class="rsvp"><div class="w">
+  <span class="eyebrow">Kindly reply by 1 January 2027</span><h2 data-split>Will you <em>join us?</em></h2>
+  <form id="rsvp">
+    <input required placeholder="Full name" aria-label="Full name">
+    <select aria-label="Attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select>
+    <select aria-label="Guests"><option>1 guest</option><option>2 guests</option><option>3 guests</option></select>
+    <textarea rows="3" placeholder="A wish for the couple" aria-label="Wish"></textarea>
+    <button class="btn mag" type="submit" style="justify-self:start">Send RSVP</button>
+    <p id="ok" style="color:var(--gold)"></p>
+  </form>
+</div></section>
+
+<!-- 17 GIFT -->
+<section class="gift"><div class="w">
+  <span class="eyebrow">Wedding Gift</span><h2 data-r>Your presence is <em>the gift</em></h2>
+  <p data-r style="max-width:48ch;margin:1.5rem auto 0">Should you wish to honour us further, a contribution toward our first home is warmly welcomed.</p>
+  <div class="glass" data-r><span class="eyebrow">Bank Transfer</span><b class="serif" style="font-size:1.8rem">BCA · 123 456 7890</b><br>a.n. Alya Putri</div>
+</div></section>
+
+<!-- 18 WISHES -->
+<section><div class="w">
+  <span class="eyebrow">Guest Book</span><h2 data-r>Warm <em>wishes</em></h2>
+  <div class="wl" id="wl">
+    <div class="glass"><b>Nadia</b><p>May your love grow quieter and deeper every year.</p></div>
+    <div class="glass"><b>Dimas</b><p>Two of my favourite people. Cannot wait to celebrate!</p></div>
+  </div>
+</div></section>
+
+<!-- 19 FAQ -->
+<section style="background:var(--warm)"><div class="w" style="max-width:820px">
+  <span class="eyebrow">Good to know</span><h2 data-r>Questions</h2><div style="margin-top:3rem">
+    <details><summary>Can I bring a plus-one?</summary><p>Your invitation lists the number of seats reserved for you.</p></details>
+    <details><summary>Is there parking?</summary><p>Complimentary valet is available at the main entrance.</p></details>
+    <details><summary>Are children welcome?</summary><p>Yes — we would love to celebrate with your whole family.</p></details>
+  </div>
+</div></section>
+
+<!-- 20 CLOSING -->
+<section class="close"><div>
+  <span class="eyebrow">With all our love</span>
+  <h2 data-split>See you <em class="shine">there</em></h2>
+  <p data-r style="max-width:44ch;margin:2rem auto">Thank you for being part of the story that led us here. Your blessing means the world.</p>
+</div></section>
+
+<!-- 21 FOOTER -->
+<footer><div class="big" id="ft">A &amp; R</div><small>14.02.2027 · Grand Ballroom Jakarta</small></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ===== SETUP ===== */
+gsap.registerPlugin(ScrollTrigger);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, c=document) => [...c.querySelectorAll(s)];
+if (window.Lenis && !reduce) {
+  const lenis = new Lenis({lerp:.09});
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0);
+}
+/* word splitter: wraps words (and keeps child spans/em) */
+function split(el){
+  const walk = n => [...n.childNodes].forEach(c => {
+    if (c.nodeType === 3) {
+      const f = document.createDocumentFragment();
+      c.textContent.split(/(\s+)/).forEach(w => {
+        if (!w.trim()) { f.append(w); return; }
+        const o = document.createElement('span'); o.style.cssText='display:inline-block;overflow:hidden;vertical-align:top';
+        const i = document.createElement('span'); i.className='w-i'; i.textContent=w; o.append(i); f.append(o);
+      }); c.replaceWith(f);
+    } else if (c.tagName !== 'BR') walk(c);
+  });
+  walk(el); return $('.w-i', el);
+}
+const inView = (el, vars, trig) => gsap.from(el, {...vars, scrollTrigger:{trigger:trig||el, start:'top 85%'}});
+if (!reduce) {
+/* ===== HERO ===== */
+const hw = split($('.hero h1')[0]);
+gsap.timeline({defaults:{ease:'power4.out'}})
+  .from('.hero .arc', {scale:.4, opacity:0, duration:2.2})
+  .from(hw, {yPercent:110, rotate:4, duration:1.6, stagger:.15}, .3)
+  .from('.h-in', {opacity:0, y:20, duration:1.2, stagger:.3}, 1.2);
+gsap.to('.hero .bg', {yPercent:18, scale:1.15, ease:'none', scrollTrigger:{trigger:'.hero', scrub:true, start:'top top', end:'bottom top'}});
+gsap.to('.hero .arc', {rotate:90, scale:1.3, ease:'none', scrollTrigger:{trigger:'.hero', scrub:true, start:'top top', end:'bottom top'}});
+for (let i=0;i<26;i++){ const p=document.createElement('span'); p.className='pt'; p.style.left=Math.random()*100+'%'; p.style.top=Math.random()*100+'%'; $('.hero')[0].append(p);
+  gsap.to(p,{y:gsap.utils.random(-80,-200), x:gsap.utils.random(-40,40), opacity:0, duration:gsap.utils.random(5,10), repeat:-1, delay:Math.random()*5, ease:'sine.inOut'}); }
+gsap.to('.scroll', {scaleY:.3, transformOrigin:'top', repeat:-1, yoyo:true, duration:1.2});
+/* ===== GENERIC REVEALS ===== */
+$('[data-r]').forEach(el => inView(el, {y:50, opacity:0, duration:1.3, ease:'power3.out'}));
+$('[data-split]').forEach(el => { if (el.closest('.hero')) return; inView(split(el), {yPercent:110, duration:1.3, stagger:.07, ease:'power4.out'}, el); });
+$('[data-mask]').forEach(el => { gsap.from(el, {clipPath:'inset(100% 0 0 0)', duration:1.6, ease:'power4.inOut', scrollTrigger:{trigger:el, start:'top 85%'}});
+  gsap.from($('span',el), {scale:1.5, ease:'none', scrollTrigger:{trigger:el, scrub:true, start:'top bottom', end:'bottom top'}}); });
+gsap.to('.p2', {yPercent:-8, ease:'none', scrollTrigger:{trigger:'.couple', scrub:true}});
+/* ===== PINNED TIMELINE ===== */
+const st = $('.st'), years=[2019,2021,2023,2026], yr=$('#yr');
+const tl = gsap.timeline({scrollTrigger:{trigger:'#tl', pin:true, scrub:.8, start:'top top', end:'+=400%'}});
+st.forEach((s,i) => { const t=i*2, y={v:i?years[i-1]:years[0]};
+  tl.fromTo(s,{opacity:0,y:60,scale:.96},{opacity:1,y:0,scale:1,duration:.7},t)
+    .to(y,{v:years[i],duration:.7,onUpdate:()=>yr.textContent=Math.round(y.v)},t);
+  if (i<st.length-1) tl.to(s,{opacity:0,y:-60,duration:.7},t+1.3); });
+tl.to('.bar i',{scaleX:1,ease:'none',duration:tl.duration()},0);
+/* ===== HORIZONTAL JOURNEY ===== */
+const trk=$('.trk')[0];
+gsap.to(trk,{x:()=>-(trk.scrollWidth-innerWidth), ease:'none', scrollTrigger:{trigger:'#hz', pin:true, scrub:.6, end:()=>'+='+trk.scrollWidth, invalidateOnRefresh:true}});
+/* ===== GALLERY STACK ===== */
+const cds=$('.cd'); cds.forEach((c,i)=>gsap.set(c,{rotate:(i-2)*4, y:(cds.length-i)*6, zIndex:cds.length-i}));
+const gt=gsap.timeline({scrollTrigger:{trigger:'#gal', pin:true, scrub:.8, end:'+=250%'}});
+cds.slice(0,-1).forEach((c,i)=>gt.to(c,{x:(i%2?1:-1)*innerWidth*.6, rotate:(i%2?1:-1)*25, opacity:0, duration:1, ease:'power2.in'}).to(cds[i+1],{rotate:0,y:0,duration:1},'<'));
+$('.gal h2').forEach(h=>gsap.to(h,{yPercent:-40, scrollTrigger:{trigger:'#gal', scrub:true, end:'+=250%'}}));
+/* ===== ENGAGEMENT MASK ===== */
+gsap.to('#mask',{clipPath:'inset(0 0% 0 0)', duration:1.8, ease:'power4.inOut', scrollTrigger:{trigger:'#mask', start:'top 80%'}});
+/* ===== QUOTE word-by-word scrub ===== */
+gsap.to(split($('#qt')),{opacity:1, stagger:.1, ease:'none', scrollTrigger:{trigger:'.qt', scrub:true, start:'top 60%', end:'bottom 70%'}});
+/* ===== COUNTDOWN reveal ===== */
+gsap.from('.cdn .glass',{y:60, opacity:0, stagger:.12, duration:1.1, ease:'power3.out', scrollTrigger:{trigger:'#cdn', start:'top 85%'}});
+/* ===== RSVP + FOOTER ===== */
+gsap.from('#rsvp > *',{y:40, opacity:0, stagger:.12, duration:1, ease:'power3.out', scrollTrigger:{trigger:'#rsvp', start:'top 85%'}});
+gsap.from('#ft',{yPercent:60, opacity:0, scale:.8, ease:'none', scrollTrigger:{trigger:'footer', scrub:true, start:'top bottom', end:'center 70%'}});
+gsap.from('footer small',{opacity:0, y:20, scrollTrigger:{trigger:'footer small', start:'top 95%'}});
+/* ===== MICRO: cursor glow + magnetic ===== */
+const gx=gsap.quickTo('#glow','x',{duration:.6}), gy=gsap.quickTo('#glow','y',{duration:.6});
+addEventListener('pointermove',e=>{gx(e.clientX);gy(e.clientY)});
+$('.btn').forEach(b=>{ const mx=gsap.quickTo(b,'x',{duration:.5,ease:'power3'}), my=gsap.quickTo(b,'y',{duration:.5,ease:'power3'});
+  b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();mx((e.clientX-r.left-r.width/2)*.3);my((e.clientY-r.top-r.height/2)*.3)});
+  b.addEventListener('pointerleave',()=>{mx(0);my(0)}); });
+} else { $('.st,.cd').forEach(e=>e.style.opacity=1); $('#mask').style.clipPath='none'; $('.w-i').forEach(e=>e.style.opacity=1); }
+/* ===== COUNTDOWN ===== */
+const target=new Date('2027-02-14T09:00:00+07:00'), u={};
+$('[data-u]').forEach(e=>u[e.dataset.u]=e);
+(function tick(){ let d=Math.max(0,target-Date.now())/1000;
+  const v={d:Math.floor(d/86400),h:Math.floor(d%86400/3600),m:Math.floor(d%3600/60),s:Math.floor(d%60)};
+  for(const k in u) u[k].textContent=String(v[k]).padStart(k==='d'?1:2,'0'); setTimeout(tick,1000); })();
+/* ===== RSVP + WISHES ===== */
+$('#rsvp')[0].addEventListener('submit',e=>{ e.preventDefault(); const f=e.target, n=f[0].value, w=f[3].value;
+  $('#ok')[0].textContent='Thank you, '+n+' — your reply has been received.';
+  if (w){ const d=document.createElement('div'); d.className='glass'; const b=document.createElement('b'), p=document.createElement('p'); b.textContent=n; p.textContent=w; d.append(b,p); $('#wl')[0].prepend(d); gsap.from(d,{y:30,opacity:0,duration:.8}); ScrollTrigger.refresh(); }
+  f.reset(); });
+addEventListener('load',()=>ScrollTrigger.refresh());
+</script>
+</body>
+</html>
