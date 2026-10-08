@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="lock">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alya &amp; Rizky — Pawiwahan 14.02.2027</title>
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ===== TOKENS (light = siang / day, dark = malam / night) ===== */
+:root{--bg:#efe3c8;--ink:#3a2616;--gold:#8f5f14;--gold2:#c9972f;--maroon:#7a2a22;--panel:rgba(255,248,230,.55);--line:rgba(122,80,30,.5);--vig:rgba(70,40,15,.3);
+--cz:'Cinzel',Georgia,serif;--sf:'Cormorant Garamond',Georgia,serif;--sn:'Manrope',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c110a;--ink:#f1e3c4;--gold:#d4a84b;--gold2:#f0cf7a;--maroon:#c0584a;--panel:rgba(255,235,190,.06);--line:rgba(212,168,75,.45);--vig:rgba(0,0,0,.65)}}
+:root[data-theme="dark"]{--bg:#1c110a;--ink:#f1e3c4;--gold:#d4a84b;--gold2:#f0cf7a;--maroon:#c0584a;--panel:rgba(255,235,190,.06);--line:rgba(212,168,75,.45);--vig:rgba(0,0,0,.65)}
+/* ===== BASE ===== */
+*{box-sizing:border-box;margin:0}
+html{background:var(--bg);scroll-padding-top:env(safe-area-inset-top,0px)}
+html.lock,html.lock body{overflow:hidden}
+body{background:var(--bg);color:var(--ink);font:300 16px/1.6 var(--sn);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#track{height:1250svh}
+/* ===== STAGE: real 3D tunnel ===== */
+#stage{position:fixed;inset:0;perspective:1000px;perspective-origin:50% 46%;overflow:hidden}
+#pat{position:absolute;inset:-45%;opacity:.3;will-change:transform;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23b8862e' stroke-width='1'%3E%3Cellipse cx='20' cy='40' rx='17' ry='8'/%3E%3Cellipse cx='60' cy='40' rx='17' ry='8'/%3E%3Cellipse cx='40' cy='20' rx='8' ry='17'/%3E%3Cellipse cx='40' cy='60' rx='8' ry='17'/%3E%3C/g%3E%3C/svg%3E")}
+#vig{position:absolute;inset:0;pointer-events:none;z-index:5;background:radial-gradient(ellipse at 50% 46%,transparent 35%,var(--vig))}
+#world{position:absolute;inset:0;transform-style:preserve-3d;z-index:2}
+.l{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:max(1rem,env(safe-area-inset-top,0px)) 1.2rem max(1rem,env(safe-area-inset-bottom,0px));pointer-events:none}
+.l{display:none}.l.v{display:grid;will-change:transform,opacity}.l.on{pointer-events:auto}
+.fr,.ring{position:absolute;left:50%;top:50%;width:min(86vw,600px);height:min(90svh,860px);border:1px solid var(--line);border-radius:999px 999px 6px 6px;box-shadow:0 0 0 8px var(--bg),0 0 0 9px var(--line)}
+.fr{transform:translate(-50%,-50%);background:linear-gradient(var(--panel),transparent 70%)}
+.ring{transform:translate(-50%,-50%);width:min(98vw,700px);height:min(98svh,940px);box-shadow:none;border-color:var(--gold)}
+.ring{display:none}.ring.v{display:block;will-change:transform,opacity}
+.dot{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:radial-gradient(circle,var(--gold2) 0 30%,transparent 70%);display:none}.dot.v{display:block;will-change:transform,opacity}
+.in{position:relative;max-width:min(72vw,440px)}
+/* ===== TYPE ===== */
+.eb{display:block;font-size:.66rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+h1,h2,h3{font-family:var(--cz);font-weight:400;text-transform:uppercase;line-height:1.1;letter-spacing:.06em}
+h1{font-size:clamp(2.4rem,11vw,5.2rem);line-height:1}h1 i{display:block;font:italic 300 .45em var(--sf);color:var(--gold);text-transform:none;letter-spacing:0;margin:.15em 0}
+h2{font-size:clamp(1.35rem,5.2vw,2.5rem);margin-bottom:1rem}
+h3{font-size:1rem;color:var(--gold)}
+p{max-width:38ch;margin:0 auto .8rem}.q{font:italic 300 1.2rem/1.4 var(--sf)}
+.orn{color:var(--gold);letter-spacing:.6em;margin:.8rem 0}
+.hint{margin-top:2rem;font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);animation:pl 2s ease-in-out infinite}@keyframes pl{50%{opacity:.3;transform:translateY(6px)}}
+/* ===== SCENES ===== */
+.cp{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.6rem}
+.av{width:min(26vw,104px);aspect-ratio:3/4;margin:0 auto .7rem;border-radius:999px 999px 0 0;display:grid;place-items:center;font:italic 300 2.6rem var(--sf);color:#f6ead0;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--gold)}
+.cp>div:first-child .av{background:linear-gradient(#a8741f,#3d2616)}.cp>div:last-child .av{background:linear-gradient(#8a3b2e,#2b1a10)}
+.cp small{display:block;font-size:.72rem;opacity:.8;margin-top:.2rem}
+.tl{list-style:none;text-align:left;display:grid;gap:.9rem}.tl li{display:grid;grid-template-columns:3.4rem 1fr;gap:.8rem;border-bottom:1px solid var(--line);padding-bottom:.7rem}.tl b{font:italic 400 1.5rem var(--sf);color:var(--gold)}
+.cx{display:grid;gap:.6rem}.cx>div{border:1px solid var(--line);background:var(--panel);padding:.8rem 1rem}.cx time{font:italic 400 1.1rem var(--sf);color:var(--maroon);display:block}.cx p{font-size:.82rem;margin:.2rem 0 0}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin:1rem 0}.cd div{border:1px solid var(--line);padding:.7rem .2rem;background:var(--panel)}.cd b{display:block;font:400 clamp(1.4rem,6vw,2.2rem)/1 var(--cz)}.cd span{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.sw{display:flex;gap:.7rem;justify-content:center;margin:.8rem 0}.sw i{width:38px;height:38px;border-radius:50%;box-shadow:0 0 0 1px var(--line)}
+.big{font:400 clamp(1.8rem,8.4vw,3.6rem)/1.1 var(--cz);text-transform:uppercase;letter-spacing:.04em}.big .w{display:inline-block;margin:0 .15em}
+.fm{display:grid;gap:.4rem}.fm h3{margin-bottom:.1rem}
+form{display:grid;gap:.7rem;text-align:left}
+input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:.55rem 0;color:var(--ink);font:300 1rem var(--sn);outline:0;border-radius:0}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}option{color:#2b1a10}
+.btn{justify-self:center;padding:.9rem 2.2rem;border:1px solid var(--gold);background:transparent;color:var(--ink);font:400 .68rem var(--sn);letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:background .4s,color .4s}.btn:hover{background:var(--gold);color:var(--bg)}
+#ok{font-size:.8rem;color:var(--gold);min-height:1.2em;text-align:center;margin:0 auto}
+/* ===== DOORS (gapura intro) ===== */
+#doors{position:fixed;inset:0;z-index:100;display:flex}
+.dr{flex:1;background:#2b1a10 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23d4a84b' stroke-opacity='.35'%3E%3Cellipse cx='20' cy='40' rx='17' ry='8'/%3E%3Cellipse cx='60' cy='40' rx='17' ry='8'/%3E%3Cellipse cx='40' cy='20' rx='8' ry='17'/%3E%3Cellipse cx='40' cy='60' rx='8' ry='17'/%3E%3C/g%3E%3C/svg%3E");box-shadow:inset 0 0 0 10px #2b1a10,inset 0 0 0 11px #d4a84b}
+.dr:first-child{border-right:1px solid #d4a84b}
+#dtx{position:absolute;inset:0;display:grid;place-content:center;gap:1.6rem;text-align:center;color:#f1e3c4;padding:1rem}
+#dtx .eb{color:#d4a84b}#dtx h1{color:#f1e3c4}#dtx .btn{color:#f1e3c4;border-color:#d4a84b}#dtx .btn:hover{background:#d4a84b;color:#2b1a10}
+/* ===== UI ===== */
+#nav{position:fixed;right:max(.7rem,env(safe-area-inset-right,0px));top:50%;translate:0 -50%;z-index:50;display:grid;gap:.7rem;opacity:0}
+#nav button{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;padding:0;transition:background .3s,transform .3s}#nav button.a{background:var(--gold);transform:scale(1.5)}
+#mus{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:max(1rem,env(safe-area-inset-bottom,0px));z-index:50;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:var(--panel);display:flex;gap:3px;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none}
+#mus i{width:2px;height:6px;background:var(--gold)}#mus.on i{animation:eq 1s ease-in-out infinite alternate}#mus.on i:nth-child(2){animation-delay:-.4s}#mus.on i:nth-child(3){animation-delay:-.8s}@keyframes eq{from{height:5px}to{height:17px}}
+/* ===== REDUCED MOTION: plain stacked page ===== */
+.rm #track{height:0}.rm #stage{position:static;perspective:none;overflow:visible}.rm #world{position:static;transform:none!important}
+.rm .l{position:relative;min-height:100svh;display:grid!important;opacity:1!important;transform:none!important;pointer-events:auto}.rm .ring,.rm .dot,.rm #nav,.rm #pat,.rm .hint{display:none}.rm .fr{transform:translate(-50%,-50%)}
+</style>
+</head>
+<body>
+<!-- INTRO: gapura doors -->
+<div id="doors"><div class="dr"></div><div class="dr"></div>
+  <div id="dtx"><div><span class="eb">Pawiwahan</span><h1>Alya<i>&amp;</i>Rizky</h1></div><button class="btn" id="open">Buka Undangan</button></div></div>
+<button id="mus" aria-label="Toggle music" aria-pressed="false"><i></i><i></i><i></i></button>
+<nav id="nav" aria-label="Scenes"></nav>
+<div id="track"></div>
+
+<div id="stage"><div id="pat"></div><div id="vig"></div>
+<div id="world">
+
+<!-- 1 COVER -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Pawiwahan</span><h1 id="names">Alya<i>&amp;</i>Rizky</h1>
+  <div class="orn">❖</div><p>Minggu, 14 Februari 2027<br>Grand Ballroom Jakarta</p><div class="hint">Scroll to enter</div></div></section>
+
+<!-- 2 WELCOME -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Sugeng Rawuh</span><h2>With grateful hearts</h2>
+  <p>We invite you to witness the union of two families, in the traditions we cherish and the love that brought us here.</p><div class="orn">❖</div><p class="q">Mugi tansah rahayu.</p></div></section>
+
+<!-- 3 COUPLE -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Pengantin</span><h2>The couple</h2>
+  <div class="cp"><div><div class="av">A</div><h3>Alya Putri</h3><small>Daughter of Bapak Hendra &amp; Ibu Sari</small></div>
+  <div><div class="av">R</div><h3>Rizky Pratama</h3><small>Son of Bapak Agus &amp; Ibu Lestari</small></div></div></div></section>
+
+<!-- 4 STORY -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Our Story</span><h2>Slowly, then all at once</h2>
+  <ul class="tl"><li><b>2019</b><span>Met at a gamelan rehearsal in Yogyakarta: she on saron, he on kendang.</span></li>
+  <li><b>2022</b><span>Letters, late trains and two cities, until home became a person.</span></li>
+  <li><b>2026</b><span>He asked in her grandmother's garden. She had already said yes.</span></li></ul></div></section>
+
+<!-- 5 ADAT -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Rangkaian Adat</span><h2>The ceremonies</h2>
+  <div class="cx"><div><h3>Siraman</h3><time>13 Feb · 15:00</time><p>A cleansing with flower water, blessed by the elders.</p></div>
+  <div><h3>Midodareni</h3><time>13 Feb · 19:00</time><p>A quiet evening of prayer and reflection.</p></div>
+  <div><h3>Panggih</h3><time>14 Feb · 11:00</time><p>The meeting of bride and groom, and the first step together.</p></div></div></div></section>
+
+<!-- 6 EVENT -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Waktu &amp; Tempat</span><h2>Akad &amp; Resepsi</h2>
+  <p>Sunday, 14 February 2027</p><div class="orn">❖</div>
+  <p><b>09:00</b> Akad Nikah<br><b>18:30</b> Resepsi &amp; dinner</p><div class="orn">❖</div>
+  <h3>Grand Ballroom Jakarta</h3><p style="margin-top:.5rem">Jl. Jenderal Sudirman, Jakarta Pusat<br>Valet and shuttle available. Map coming soon.</p></div></section>
+
+<!-- 7 COUNTDOWN + DRESS -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Hitung Mundur</span><h2>Until we meet</h2>
+  <div class="cd"><div><b data-u="d">0</b><span>Days</span></div><div><b data-u="h">0</b><span>Hours</span></div><div><b data-u="m">0</b><span>Min</span></div><div><b data-u="s">0</b><span>Sec</span></div></div>
+  <span class="eb" style="margin-top:1.6rem">Busana</span><p>Batik or kebaya in sogan brown, cream, indigo and gold.</p>
+  <div class="sw"><i style="background:#8a5a2b"></i><i style="background:#efe3c8"></i><i style="background:#1f2a44"></i><i style="background:#c9972f"></i></div></div></section>
+
+<!-- 8 QUOTE -->
+<section class="l"><div class="fr"></div><div class="in" style="max-width:min(80vw,480px)">
+  <span class="eb">Pepatah</span><div class="big" id="qt">Alon-alon waton kelakon</div><div class="orn">❖</div><p class="q">Slowly, yet surely, what is meant to be will be.</p></div></section>
+
+<!-- 9 FAMILY + GIFT -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Kulawarga</span><h2>With love from</h2>
+  <div class="fm"><h3>Family of the Bride</h3><p>Bapak Hendra Putri &amp; Ibu Sari Dewi</p><h3>Family of the Groom</h3><p>Bapak Agus Pratama &amp; Ibu Lestari Wulan</p></div>
+  <div class="orn">❖</div><p>Your presence is our greatest gift. A token toward our new home is warmly welcomed.</p><p><b>BCA · 123 456 7890</b><br>a.n. Alya Putri</p></div></section>
+
+<!-- 10 RSVP + WISHES -->
+<section class="l"><div class="fr"></div><div class="in">
+  <span class="eb">Nyuwun Pangestu</span><h2>Will you join us?</h2>
+  <form id="rsvp"><input required placeholder="Full name" aria-label="Full name">
+  <select aria-label="Attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select>
+  <textarea rows="2" placeholder="A wish for the couple" aria-label="Wish"></textarea>
+  <button class="btn" type="submit">Send RSVP</button><p id="ok"></p></form>
+  <div class="orn">❖</div><p class="q">Matur nuwun. We hold you close.</p></div></section>
+
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script>
+/* ===== SETUP ===== */
+const $=(s,c=document)=>[...c.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TARGET=new Date('2027-02-14T09:00:00+07:00');
+gsap.registerPlugin(ScrollTrigger,ScrollToPlugin,...(window.SplitText?[SplitText]:[]));
+const TITLES=['Pawiwahan','Sugeng Rawuh','Pengantin','Our Story','Rangkaian Adat','Waktu & Tempat','Hitung Mundur','Pepatah','Kulawarga','RSVP'];
+
+/* ===== TUNNEL ENGINE =====
+   Every layer is positioned RELATIVE to the camera (z = (cam - j) * D). Numbers stay small (no float jitter at
+   z = 12000px), and anything outside the visible window is culled with display:none (no wasted GPU layers). */
+ScrollTrigger.config({ignoreMobileResize:true}); /* mobile address-bar show/hide must not re-layout the tunnel */
+const D=1400, world=$('#world')[0], pat=$('#pat')[0], scenes=$('.l'), N=scenes.length, items=[];
+scenes.forEach((el,i)=>items.push({el,j:i,max:1,scene:1,last:i===N-1,tf:z=>`translate3d(0,0,${z}px)`}));
+if(!reduce){
+  for(let i=0;i<N-1;i++){const el=document.createElement('div');el.className='ring';world.append(el);
+    items.push({el,j:i+.5,max:.55,tf:z=>`translate(-50%,-50%) translate3d(0,0,${z}px)`})}
+  for(let k=0;k<26;k++){const el=document.createElement('i'),a=Math.random()*6.283,r=240+Math.random()*(innerWidth*.5),x=(Math.cos(a)*r).toFixed(0),y=(Math.sin(a)*r*.8).toFixed(0);
+    el.className='dot';world.append(el);items.push({el,j:Math.random()*(N-1),max:.75,tf:z=>`translate3d(${x}px,${y}px,${z}px)`})}
+}
+const ss=(a,b,x)=>{x=Math.min(1,Math.max(0,(x-a)/(b-a)));return x*x*(3-2*x)};
+const ease=gsap.parseEase('power2.inOut'), c01=gsap.utils.clamp(0,1);
+/* scroll progress -> camera position: each scene dwells, then flies. The drift term is 0 at every scene boundary (no jump). */
+const camOf=p=>{const u=p*(N-1),i=Math.min(Math.floor(u),N-2),f=u-i;
+  return Math.min(N-1,Math.max(0,i+ease(c01((f-.28)/.44))+Math.sin(f*6.2832)*.012))};
+/* quote words + name letters (SplitText), hidden up-front so nothing flashes */
+let qw=[],nc=[];
+if(window.SplitText&&!reduce){qw=SplitText.create('#qt',{type:'words'}).words;gsap.set(qw,{opacity:.12});
+  nc=SplitText.create('#names',{type:'chars'}).chars;gsap.set(nc,{opacity:0,yPercent:80})}
+/* dot navigation (ScrollToPlugin) */
+const nav=$('#nav')[0];
+TITLES.forEach((t,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',t);b.title=t;b.onclick=()=>{
+  const max=$('#track')[0].offsetHeight-innerHeight;gsap.to(window,{duration:1.8,ease:'power3.inOut',scrollTo:{y:i/(N-1)*max,autoKill:true}})};nav.append(b)});
+const navB=$('button',nav);
+let lastA=-1;
+function render(cam){
+  pat.style.transform=`scale(${(1+cam*.1).toFixed(3)}) rotate(${(cam*1.2).toFixed(2)}deg)`;
+  for(const it of items){
+    const d=cam-it.j;
+    if(d<-1.05||d>.6){ if(it.v){it.v=0;it.el.classList.remove('v','on');it.on=0} continue }   /* culled */
+    if(!it.v){it.v=1;it.el.classList.add('v')}
+    const o=+(ss(-1,-.45,d)*(it.last?1:1-ss(.18,.55,d))*it.max).toFixed(3);
+    it.el.style.transform=it.tf((d*D).toFixed(1));
+    if(o!==it.o){it.o=o;it.el.style.opacity=o}
+    if(it.scene){const on=o>.7;if(on!==it.on){it.on=on;it.el.classList.toggle('on',on)}}
+  }
+  if(qw.length&&cam>6&&cam<8.3){const r=ss(-.35,.05,cam-7);qw.forEach((w,k)=>w.style.opacity=Math.max(.12,Math.min(1,r*qw.length*1.2-k)))}
+  const a=Math.round(cam);if(a!==lastA){lastA=a;navB.forEach((b,i)=>b.classList.toggle('a',i===a))}
+}
+/* ONE source of truth: scroll -> prog.p (time-based scrub smoothing, same on 60/120Hz) -> camera.
+   The ticker only renders when the camera actually moved. */
+const prog={p:0}, intro={v:-1}; let lastCam=-9;
+gsap.to(prog,{p:1,ease:'none',scrollTrigger:{trigger:'#track',start:'top top',end:'bottom bottom',scrub:.9}});
+if(!reduce)gsap.ticker.add(()=>{const cam=Math.min(N-1,camOf(prog.p)+intro.v);if(Math.abs(cam-lastCam)>1e-4){lastCam=cam;render(cam)}});
+
+/* ===== INTRO: gapura doors -> fly in (one labelled timeline) ===== */
+function begin(){$('#doors')[0].remove();document.documentElement.classList.remove('lock');ScrollTrigger.refresh();
+  gsap.to('#mus,#nav',{opacity:1,duration:1,pointerEvents:'auto'})}
+$('#open')[0].addEventListener('click',e=>{e.currentTarget.disabled=true;music.toggle();
+  if(reduce){document.documentElement.classList.add('rm');return begin()}
+  const t=gsap.timeline({onComplete:begin});
+  t.addLabel('doors',.5)
+   .to('#dtx',{opacity:0,scale:1.15,duration:.7,ease:'power2.in'},0)
+   .to('.dr:first-child',{xPercent:-101,duration:1.8,ease:'power3.inOut'},'doors')
+   .to('.dr:nth-child(2)',{xPercent:101,duration:1.8,ease:'power3.inOut'},'doors')
+   .to(intro,{v:0,duration:3.2,ease:'power3.out'},'doors+=.2');
+  if(nc.length)t.to(nc,{opacity:1,yPercent:0,stagger:.06,duration:1.2,ease:'power4.out'},'doors+=1.6')});
+if(reduce)document.documentElement.classList.add('rm');
+
+/* ===== GENERATIVE GAMELAN (Web Audio, slendro-style pentatonic; no audio files) ===== */
+const music=(()=>{let ctx,m,timer,on=false,n=0;const btn=$('#mus')[0],sc=[0,240,480,720,960];
+  const fq=i=>196*Math.pow(2,(sc[((i%5)+5)%5]+1200*Math.floor(i/5))/1200);
+  const bell=(f,at,v,dur)=>[1,2.76].forEach((r,k)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=f*r;
+    g.gain.setValueAtTime(0,at);g.gain.linearRampToValueAtTime(v/(k+1),at+.01);g.gain.exponentialRampToValueAtTime(.0001,at+dur/(k+1));
+    o.connect(g).connect(m);o.start(at);o.stop(at+dur+.1)});
+  const P=[[0,2,1,3,2,4,3,1],[2,4,3,1,0,2,4,3],[1,3,2,4,3,1,0,2],[4,3,2,0,1,2,3,0]];
+  const phrase=()=>{const at=ctx.currentTime+.05,p=P[n++%4];if(n%2)bell(98,at,.2,7);
+    p.forEach((x,k)=>{bell(fq(x+5),at+k*.7,.07,2.4);if(k%2===0)bell(fq(x),at+k*.7,.05,3)})};
+  const set=v=>{on=v;btn.classList.toggle('on',v);btn.setAttribute('aria-pressed',v)};
+  return{toggle(){try{if(!ctx){const A=window.AudioContext||window.webkitAudioContext;ctx=new A();m=ctx.createGain();m.gain.value=0;m.connect(ctx.destination)}
+    if(!on){set(true);ctx.resume();m.gain.setTargetAtTime(.9,ctx.currentTime,.6);phrase();timer=setInterval(phrase,5600)}
+    else{set(false);m.gain.setTargetAtTime(0,ctx.currentTime,.3);clearInterval(timer);setTimeout(()=>!on&&ctx.suspend(),1500)}}catch(e){set(false)}}}})();
+$('#mus')[0].addEventListener('click',()=>music.toggle());
+
+/* ===== COUNTDOWN ===== */
+const u={};$('[data-u]').forEach(e=>u[e.dataset.u]=e);
+(function tick(){const d=Math.max(0,TARGET-Date.now())/1000,v={d:Math.floor(d/86400),h:Math.floor(d%86400/3600),m:Math.floor(d%3600/60),s:Math.floor(d%60)};
+  for(const k in u)u[k].textContent=String(v[k]).padStart(k==='d'?1:2,'0');setTimeout(tick,1000)})();
+
+/* ===== RSVP ===== */
+$('#rsvp')[0].addEventListener('submit',e=>{e.preventDefault();const f=e.target;
+  $('#ok')[0].textContent='Matur nuwun, '+f[0].value+' — your reply is received.';f.reset()});
+addEventListener('load',()=>ScrollTrigger.refresh());
+</script>
+</body>
+</html>

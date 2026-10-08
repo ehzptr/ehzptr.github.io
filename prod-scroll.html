@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" class="lock">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alya & Rizky — 14 February 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ===== TOKENS ===== */
+:root{--ivory:#f6f0e6;--warm:#fbf8f2;--champ:#e8d9bd;--gold:#b8955a;--char:#2a2624;--rose:#c99a94;--bg:var(--ivory);--ink:var(--char);--card:rgba(255,255,255,.55);--line:rgba(184,149,90,.4);
+--serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1917;--ink:#f1e9da;--card:rgba(255,255,255,.06);--warm:#24201d;--champ:#3a322a}}
+:root[data-theme="dark"]{--bg:#1c1917;--ink:#f1e9da;--card:rgba(255,255,255,.06);--warm:#24201d;--champ:#3a322a}
+/* ===== BASE ===== */
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html.lenis{height:auto}
+body{background:var(--bg);color:var(--ink);font:300 16px/1.7 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;z-index:90;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:300;line-height:1}
+h2{font-size:clamp(2.6rem,8vw,6rem);letter-spacing:-.02em}
+em{font-style:italic;color:var(--gold)}
+.eyebrow{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.4rem}
+section{position:relative;padding:clamp(5rem,14vw,11rem) clamp(1.2rem,6vw,6rem)}
+.w{max-width:1200px;margin:auto}
+.sep{display:flex;align-items:center;gap:1rem;color:var(--gold);margin:2rem 0}.sep::before,.sep::after{content:"";height:1px;flex:1;background:var(--line)}
+.shine{background:linear-gradient(100deg,var(--gold) 20%,#f3e2b8 45%,var(--gold) 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:-250% 0}}
+.w-i{display:inline-block;will-change:transform}
+.glass{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:2px;box-shadow:0 30px 60px -30px rgba(42,38,36,.25)}
+.btn{display:inline-block;padding:1.1rem 2.6rem;border:1px solid var(--gold);background:transparent;color:var(--ink);font:400 .72rem var(--sans);letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:background .5s,color .5s;will-change:transform}
+.btn:hover{background:var(--gold);color:var(--warm)}
+#glow{position:fixed;left:0;top:0;width:380px;height:380px;margin:-190px 0 0 -190px;border-radius:50%;background:radial-gradient(circle,rgba(201,154,148,.28),transparent 65%);pointer-events:none;z-index:80;mix-blend-mode:multiply}
+@media(prefers-color-scheme:dark){#glow{mix-blend-mode:screen}}
+@media(hover:none){#glow{display:none}}
+/* ===== INTRO + MUSIC ===== */
+html.lock,html.lock body{overflow:hidden}
+#intro{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3rem;text-align:center;padding:1rem}
+.env{position:relative;width:min(86vw,420px);aspect-ratio:7/5;perspective:1200px;filter:drop-shadow(0 40px 40px rgba(42,38,36,.25))}
+.env>*{position:absolute}
+.env .card{inset:8% 6%;background:var(--warm);border:1px solid var(--line);display:grid;place-content:center;gap:.6rem;z-index:1}
+.env .card span{font:italic 300 clamp(2rem,9vw,3rem)/1 var(--serif)}
+.env .card small{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold)}
+.env .pocket{inset:0;background:linear-gradient(#ead9bb,#dcc9a3);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:2}
+.env .flap{inset:0 0 40% 0;background:linear-gradient(#f0e2c7,#e0cda7);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;z-index:3;backface-visibility:visible}
+.env .seal{left:50%;top:48%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#dcb0aa,#a8736d);color:#fbf8f2;display:grid;place-items:center;font:italic 1.2rem var(--serif);z-index:4;box-shadow:0 6px 14px rgba(0,0,0,.3)}
+#intro p{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold)}
+#mus{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:max(1rem,env(safe-area-inset-bottom,0px));z-index:95;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;gap:3px;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none}
+#mus i{width:2px;height:6px;background:var(--gold);transition:height .3s}
+#mus.on i{animation:eq 1s ease-in-out infinite alternate}#mus.on i:nth-child(2){animation-delay:-.4s}#mus.on i:nth-child(3){animation-delay:-.8s}
+@keyframes eq{from{height:5px}to{height:18px}}
+/* ===== HERO ===== */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:0 1rem;color:#fbf8f2;background:#2a2624}
+.hero .bg{position:absolute;inset:-12% 0;background:radial-gradient(60% 50% at 30% 30%,rgba(201,154,148,.6),transparent 70%),radial-gradient(50% 60% at 75% 70%,rgba(184,149,90,.55),transparent 70%),linear-gradient(160deg,#4a3d38,#1f1b19);will-change:transform}
+.hero .vig{position:absolute;inset:0;background:radial-gradient(transparent 40%,rgba(0,0,0,.55))}
+.hero h1{font-size:clamp(4rem,17vw,13rem);font-weight:300;letter-spacing:-.03em;position:relative}
+.hero h1 .amp{font-style:italic;color:#e8d9bd;font-size:.6em;display:block;margin:-.1em 0}
+.hero p{position:relative;letter-spacing:.35em;text-transform:uppercase;font-size:.72rem}
+.hero .arc{position:absolute;left:50%;top:50%;width:min(80vw,640px);aspect-ratio:1;translate:-50% -50%;border:1px solid rgba(232,217,189,.35);border-radius:50%;will-change:transform}
+.pt{position:absolute;width:5px;height:5px;border-radius:50%;background:#e8d9bd;opacity:.6}
+.scroll{position:absolute;bottom:2rem;left:50%;width:1px;height:60px;background:linear-gradient(#e8d9bd,transparent)}
+/* ===== COUPLE ===== */
+.couple .w{display:grid;gap:3rem;grid-template-columns:1fr}
+@media(min-width:800px){.couple .w{grid-template-columns:1fr 1fr;gap:6rem}.couple .p2{margin-top:8rem}}
+.por{aspect-ratio:3/4;position:relative;overflow:hidden;border-radius:999px 999px 2px 2px;display:grid;place-items:center;font:italic 300 9rem var(--serif);color:rgba(251,248,242,.85)}
+.p1 .por{background:radial-gradient(at 30% 20%,#e7c3bd,transparent 60%),linear-gradient(#b98a85,#6f524e)}
+.p2 .por{background:radial-gradient(at 70% 20%,#f1dfb6,transparent 60%),linear-gradient(#a98853,#5c4a2e)}
+.couple h3{font-size:3rem;margin:1.5rem 0 .5rem}.couple p{max-width:34ch}
+/* ===== TIMELINE (pinned) ===== */
+.tl{background:var(--warm);height:100svh;padding:0;display:grid;place-items:center;overflow:hidden}
+.tl .yr{position:absolute;left:50%;top:50%;translate:-50% -50%;font:300 clamp(10rem,45vw,38rem)/1 var(--serif);color:transparent;-webkit-text-stroke:1px var(--line);white-space:nowrap}
+.st{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:2rem;opacity:0}
+.st div{max-width:42ch}.st h3{font-size:clamp(2.2rem,6vw,4.5rem);margin:.5rem 0 1rem}
+.bar{position:absolute;left:8%;right:8%;bottom:8%;height:1px;background:var(--line)}.bar i{display:block;height:100%;background:var(--gold);transform-origin:0 0;transform:scaleX(0)}
+/* ===== JOURNEY (horizontal) ===== */
+.hz{padding:0;height:100svh;overflow:hidden;display:flex;align-items:center}
+.trk{display:flex;gap:6vw;padding:0 8vw;will-change:transform}
+.pn{flex:0 0 min(78vw,520px);padding:2.4rem;min-height:340px;display:flex;flex-direction:column;justify-content:space-between}
+.pn:nth-child(even){margin-top:8rem}.pn:nth-child(odd){margin-bottom:6rem}
+.pn b{font:italic 300 4rem var(--serif);color:var(--rose)}.pn h3{font-size:2.2rem;margin:.6rem 0}
+.hz .ti{position:absolute;top:12%;left:8vw;z-index:2}
+/* ===== GALLERY stack ===== */
+.gal{height:100svh;padding:0;display:grid;place-items:center;overflow:hidden;background:var(--champ)}
+.gal h2{position:absolute;top:8%;left:50%;translate:-50% 0;white-space:nowrap}
+.cd{position:absolute;width:min(70vw,340px);aspect-ratio:3/4;border:10px solid var(--warm);box-shadow:0 40px 70px -25px rgba(0,0,0,.4);display:flex;align-items:flex-end;padding:1.2rem;font:italic 1.5rem var(--serif);color:#fbf8f2;transition:scale .6s;will-change:transform}
+.cd:hover{scale:1.05}
+.cd:nth-of-type(1){background:linear-gradient(160deg,#d9a8a1,#6f524e)}.cd:nth-of-type(2){background:linear-gradient(200deg,#e5cf9d,#7d6338)}.cd:nth-of-type(3){background:linear-gradient(140deg,#8d7f76,#2a2624)}.cd:nth-of-type(4){background:linear-gradient(190deg,#f0d5ce,#b98a85)}.cd:nth-of-type(5){background:linear-gradient(150deg,#c8b48a,#5c4a2e)}
+/* ===== ENGAGEMENT / DETAILS ===== */
+.eng{background:var(--char);color:#f1e9da;overflow:hidden}
+.eng .mask{clip-path:inset(0 100% 0 0);background:linear-gradient(120deg,#c99a94,#7d6338);aspect-ratio:16/9;margin-bottom:3rem;display:grid;place-items:center;font:italic 300 clamp(2rem,6vw,5rem) var(--serif);color:#fbf8f2;text-align:center}
+.eng p{max-width:60ch}
+.det{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:4rem}
+.det>div{padding:2.2rem}.det h3{font-size:2rem;margin:.4rem 0}
+.cdn{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;text-align:center;margin-top:4rem}
+.cdn div{padding:1.6rem .4rem}.cdn b{display:block;font:300 clamp(2.4rem,9vw,6rem)/1 var(--serif)}.cdn span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.sw{display:flex;gap:1rem;margin-top:1.5rem}.sw i{width:56px;height:56px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line)}
+.map{margin-top:2rem;height:300px;position:relative;overflow:hidden;background:repeating-linear-gradient(35deg,transparent 0 40px,var(--line) 40px 41px),repeating-linear-gradient(-55deg,transparent 0 60px,var(--line) 60px 61px),var(--champ)}
+.map::after{content:"Interactive map — coming soon";position:absolute;inset:auto 0 1rem;text-align:center;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
+.pin{position:absolute;left:50%;top:42%;width:22px;height:22px;background:var(--rose);border-radius:50% 50% 50% 0;rotate:-45deg}
+.sch li{list-style:none;display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+.sch time{font:italic 2rem var(--serif);color:var(--gold)}
+/* ===== QUOTE ===== */
+.qt{min-height:100svh;display:grid;place-items:center;text-align:center}
+.qt blockquote{font:300 clamp(2.2rem,7vw,5.5rem)/1.1 var(--serif);max-width:18em}.qt .w-i{opacity:.12}
+/* ===== FAMILY / RSVP / GIFT / WISH / FAQ ===== */
+.fam{display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.fam h3{font-size:2rem;margin-bottom:.8rem}
+.rsvp{background:var(--warm)}
+form{display:grid;gap:1.4rem;max-width:620px;margin:3rem 0 0 auto}
+input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:.9rem 0;color:var(--ink);font:300 1rem var(--sans);outline:0;border-radius:0}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+option{color:#2a2624}
+.gift{text-align:center}.gift .glass{display:inline-block;padding:2rem 3rem;margin-top:2rem;text-align:left}
+.wl{display:grid;gap:1rem;margin-top:2rem}.wl .glass{padding:1.4rem 1.8rem}.wl b{font:italic 1.6rem var(--serif)}
+details{border-bottom:1px solid var(--line);padding:1.4rem 0}summary{cursor:pointer;font:300 1.8rem var(--serif);list-style:none}summary::after{content:"+";float:right;color:var(--gold)}details[open] summary::after{content:"–"}details p{margin-top:.8rem;max-width:56ch}
+.close{min-height:100svh;display:grid;place-items:center;text-align:center;background:linear-gradient(var(--bg),var(--champ))}
+.close h2{font-size:clamp(3rem,11vw,9rem)}
+footer{background:var(--char);color:#f1e9da;text-align:center;padding:6rem 1rem 4rem;overflow:hidden}
+footer .big{font:italic 300 clamp(5rem,26vw,22rem)/.9 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(232,217,189,.4)}
+footer small{display:block;margin-top:2rem;letter-spacing:.3em;text-transform:uppercase;font-size:.65rem;opacity:.6}
+@media(prefers-reduced-motion:reduce){.shine{animation:none}}
+
+/* ===== SHARED: full screen · gallery preview modal · RSVP check-in QR modal ===== */
+.mdl,#fs{--ma:var(--acc,var(--gold,#b8955a));--mbg:var(--bg,#f6f0e6);--mink:var(--ink,#2a2624);--ml:var(--line,rgba(184,149,90,.4));--mfont:var(--serif,var(--sf,Georgia,serif));--msans:var(--sans,var(--sn,system-ui,sans-serif))}
+#fs{position:fixed;z-index:95;right:max(1rem,env(safe-area-inset-right,0px));bottom:calc(max(1rem,env(safe-area-inset-bottom,0px)) + 58px);width:40px;height:40px;border-radius:50%;border:1px solid var(--ma);background:var(--card,var(--panel,rgba(255,255,255,.5)));display:grid;place-items:center;cursor:pointer;color:var(--ma);transition:opacity .6s}
+#fs svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}#fs .b,#fs.on .a{display:none}#fs.on .b{display:inline}
+html.lock #fs{opacity:0;pointer-events:none}
+.mdl{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:max(1rem,env(safe-area-inset-top,0px)) max(1rem,env(safe-area-inset-right,0px)) max(1rem,env(safe-area-inset-bottom,0px)) max(1rem,env(safe-area-inset-left,0px));opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;font-family:var(--msans);text-align:left}
+.mdl.open{opacity:1;visibility:visible}
+.mb{position:absolute;inset:0;background:rgba(10,8,6,.84);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.mx{position:absolute;z-index:3;top:max(.8rem,env(safe-area-inset-top,0px));right:max(.8rem,env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--ma);background:rgba(0,0,0,.35);color:#fff;font:300 1.6rem/1 var(--msans);cursor:pointer}
+.mf{position:relative;z-index:2;width:min(88vw,520px);transform:scale(.94);transition:transform .45s cubic-bezier(.2,.8,.2,1)}.mdl.open .mf{transform:none}
+.mi{width:100%;height:min(70svh,calc(min(88vw,520px)*1.33));background-size:cover;background-position:center;border:1px solid var(--ma);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.mi.sw{animation:mswap .45s ease}@keyframes mswap{from{opacity:0;transform:scale(1.03)}}
+.mf figcaption{margin-top:.9rem;text-align:center;color:#fff}#mgc{font:italic 300 1.5rem/1.2 var(--mfont)}#mgn{display:block;font-size:.7rem;letter-spacing:.3em;opacity:.7;margin-top:.2rem}
+.mpv,.mnx{position:absolute;z-index:3;top:50%;translate:0 -50%;width:44px;height:44px;border-radius:50%;border:1px solid var(--ma);background:rgba(0,0,0,.35);color:#fff;font:300 1.5rem/1 var(--msans);cursor:pointer}
+.mpv{left:max(.6rem,env(safe-area-inset-left,0px))}.mnx{right:max(.6rem,env(safe-area-inset-right,0px))}
+.mx:hover,.mpv:hover,.mnx:hover{background:var(--ma);color:var(--mbg)}
+.mc{position:relative;z-index:2;width:min(92vw,400px);max-height:calc(100svh - 2rem);overflow:auto;overscroll-behavior:contain;padding:1.8rem 1.4rem 1.5rem;background:var(--mbg);color:var(--mink);border:1px solid var(--ml);text-align:center;transform:translateY(14px);transition:transform .45s cubic-bezier(.2,.8,.2,1)}.mdl.open .mc{transform:none}
+.mc .mx{top:.5rem;right:.5rem;width:38px;height:38px;background:none;color:var(--mink)}
+.me{display:block;font:400 .66rem var(--msans);letter-spacing:.32em;text-transform:uppercase;color:var(--ma)}.mh{font:300 2rem/1.1 var(--mfont);margin:.3rem 0 .2rem}
+.mt{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ml);margin:1rem 0 .6rem}.mt button{padding:.7rem;background:none;border:0;color:var(--mink);font:400 .68rem var(--msans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.mt button.on{background:var(--ma);color:var(--mbg)}
+.mc [data-p]{display:block}.mc [data-p][hidden]{display:none}
+.mc input,.mc select{width:100%;margin-top:.7rem}
+.mbtn{display:inline-block;margin-top:1rem;padding:.85rem 1.7rem;border:1px solid var(--ma);background:transparent;color:var(--mink);font:400 .68rem var(--msans);letter-spacing:.25em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s}.mbtn:hover{background:var(--ma);color:var(--mbg)}
+.qbox{display:grid;place-items:center;margin:1.1rem auto .4rem;padding:12px;background:#fff;width:fit-content}.qbox:empty{display:none}.qbox img,.qbox canvas{display:block;max-width:100%;height:auto}
+.mhint{margin:.7rem auto 0;max-width:34ch;font-size:.82rem;opacity:.8;text-align:center}
+.vw{position:relative;aspect-ratio:1;width:100%;background:#000;overflow:hidden;margin-top:.8rem}.vw video{width:100%;height:100%;object-fit:cover}.vw::after{content:"";position:absolute;inset:16%;border:2px dashed var(--ma);opacity:.9}
+.mres{min-height:1.4em;margin:.8rem auto 0;font-size:.9rem;text-align:center}.mres.ok{color:#3aa56a}.mres.no{color:#e0654f}
+@media(prefers-reduced-motion:reduce){.mdl,.mf,.mc{transition:none}.mi.sw{animation:none}}
+.cd{cursor:zoom-in}.gal .gh{position:absolute;bottom:7%;left:50%;translate:-50% 0;z-index:0;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+<button id="mus" aria-label="Toggle music" aria-pressed="false"><i></i><i></i><i></i></button>
+<!-- INTRO: envelope -->
+<div id="intro">
+  <div class="env"><div class="card"><span>Alya &amp; Rizky</span><small>You are invited</small></div><div class="pocket"></div><div class="flap"></div><div class="seal">A&amp;R</div></div>
+  <button class="btn" id="open">Open invitation</button>
+  <p>14 · 02 · 2027</p>
+</div>
+
+<!-- 1 HERO -->
+<header class="hero">
+  <div class="bg"></div><div class="arc"></div><div class="vig"></div>
+  <div style="position:relative">
+    <p class="h-in">Together with their families</p>
+    <h1 data-split><span>Alya</span><span class="amp">&amp;</span><span>Rizky</span></h1>
+    <p class="h-in" style="margin-top:2.4rem">14 · 02 · 2027 &nbsp;—&nbsp; Jakarta</p>
+  </div>
+  <div class="scroll"></div>
+</header>
+
+<!-- 2 COUPLE -->
+<section class="couple"><div class="w">
+  <div class="p1"><div class="por" data-mask><span>A</span></div><span class="eyebrow" style="margin-top:2rem">The Bride</span><h3 data-r>Alya Putri</h3><p data-r>A curator of quiet moments, who finds poetry in morning light, old bookshops and the people she loves.</p></div>
+  <div class="p2"><div class="por" data-mask><span>R</span></div><span class="eyebrow" style="margin-top:2rem">The Groom</span><h3 data-r>Rizky Pratama</h3><p data-r>An architect of small kindnesses, steady as a lighthouse, and forever the first to make her laugh.</p></div>
+</div></section>
+
+<!-- 3 TIMELINE: story + first meeting -->
+<section class="tl" id="tl">
+  <div class="yr"><span id="yr">2019</span></div>
+  <div class="st"><div><span class="eyebrow">First Meeting</span><h3>A rainy afternoon, one shared umbrella</h3><p>In a Bandung café, two strangers reached for the last table — and stayed for the whole conversation.</p></div></div>
+  <div class="st"><div><span class="eyebrow">Our Story</span><h3>Letters across two cities</h3><p>Long distance taught us patience, and that home is a person, not a place.</p></div></div>
+  <div class="st"><div><span class="eyebrow">Our Story</span><h3>Learning each other's silence</h3><p>New apartment, tangled playlists, and a quiet certainty that grew every day.</p></div></div>
+  <div class="st"><div><span class="eyebrow">Our Story</span><h3>Yes, in every language</h3><p>On a hilltop at sunset, he asked. She had already said yes a thousand times.</p></div></div>
+  <div class="bar"><i></i></div>
+</section>
+
+<!-- 5 JOURNEY horizontal -->
+<section class="hz" id="hz">
+  <h2 class="ti">Our <em>journey</em></h2>
+  <div class="trk">
+    <div style="flex:0 0 40vw"></div>
+    <div class="pn glass"><b>01</b><div><h3>Hello</h3><p>Coffee, rain, and a number scribbled on a napkin.</p></div></div>
+    <div class="pn glass"><b>02</b><div><h3>Adventures</h3><p>Night trains, mountain mornings, and getting happily lost.</p></div></div>
+    <div class="pn glass"><b>03</b><div><h3>Home</h3><p>Two toothbrushes, one shelf of books, a shared life.</p></div></div>
+    <div class="pn glass"><b>04</b><div><h3>Forever</h3><p>Every road led here, to you.</p></div></div>
+  </div>
+</section>
+
+<!-- 6 GALLERY -->
+<section class="gal" id="gal">
+  <h2 style="z-index:0">Moments</h2>
+  <div class="cd" data-gi>Golden hour</div><div class="cd" data-gi>Bandung, 2019</div><div class="cd" data-gi>Midnight train</div><div class="cd" data-gi>Sunday slow</div><div class="cd" data-gi>The question</div><p class="gh">Tap a photo to preview</p>
+</section>
+
+<!-- 7 ENGAGEMENT -->
+<section class="eng"><div class="w">
+  <span class="eyebrow">The Engagement</span>
+  <div class="mask" id="mask">She said yes.</div>
+  <p data-r>On a quiet hilltop above the clouds, Rizky knelt with his grandmother's ring. Surrounded by those who raised them, the question became a promise — and the promise became a date.</p>
+</div></section>
+
+<!-- 8-13 DETAILS -->
+<section><div class="w">
+  <span class="eyebrow">The Celebration</span><h2 data-split>Join us for <em>the day</em></h2>
+  <div class="det">
+    <div class="glass" data-r><span class="eyebrow">Event</span><h3>Akad &amp; Reception</h3><p>Sunday, 14 February 2027<br>Ceremony 09:00 · Reception 18:00</p></div>
+    <div class="glass" data-r><span class="eyebrow">Venue</span><h3>Grand Ballroom Jakarta</h3><p>Jl. Jenderal Sudirman, Jakarta Pusat. Valet and shuttle available.</p></div>
+    <div class="glass" data-r><span class="eyebrow">Dress Code</span><h3>Soft formal</h3><p>Champagne, ivory &amp; dusty rose.</p><div class="sw"><i style="background:#e8d9bd"></i><i style="background:#f6f0e6"></i><i style="background:#c99a94"></i></div></div>
+  </div>
+  <div class="cdn" id="cdn">
+    <div class="glass"><b data-u="d">0</b><span>Days</span></div><div class="glass"><b data-u="h">0</b><span>Hours</span></div><div class="glass"><b data-u="m">0</b><span>Minutes</span></div><div class="glass"><b data-u="s">0</b><span>Seconds</span></div>
+  </div>
+  <div class="map glass" data-r><div class="pin"></div></div>
+  <ul class="sch" style="margin-top:4rem;padding:0">
+    <li data-r><time>09:00</time><span>Akad Nikah — intimate family ceremony</span></li>
+    <li data-r><time>17:30</time><span>Guests arrive, welcome drinks</span></li>
+    <li data-r><time>18:30</time><span>Reception, first dance &amp; dinner</span></li>
+    <li data-r><time>21:30</time><span>Candlelit farewell</span></li>
+  </ul>
+</div></section>
+
+<!-- 14 QUOTE -->
+<section class="qt"><blockquote id="qt" data-words>“I have found the one whom my soul loves, and I will hold on to her, and never let go.”<br><em style="font-size:.4em;font-style:normal;letter-spacing:.3em">— SONG OF SOLOMON</em></blockquote></section>
+
+<!-- 15 FAMILY -->
+<section style="background:var(--warm)"><div class="w">
+  <span class="eyebrow">With love from</span><h2 data-r>Our <em>families</em></h2><div class="sep" data-r>✦</div>
+  <div class="fam">
+    <div data-r><h3>Family of the Bride</h3><p>Bapak Hendra Putri<br>&amp; Ibu Sari Dewi</p></div>
+    <div data-r><h3>Family of the Groom</h3><p>Bapak Agus Pratama<br>&amp; Ibu Lestari Wulan</p></div>
+  </div>
+</div></section>
+
+<!-- 16 RSVP -->
+<section class="rsvp"><div class="w">
+  <span class="eyebrow">Kindly reply by 1 January 2027</span><h2 data-split>Will you <em>join us?</em></h2>
+  <form id="rsvp">
+    <input required placeholder="Full name" aria-label="Full name">
+    <select aria-label="Attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select>
+    <select aria-label="Guests"><option>1 guest</option><option>2 guests</option><option>3 guests</option></select>
+    <textarea rows="3" placeholder="A wish for the couple" aria-label="Wish"></textarea>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap"><button class="btn mag" type="submit">Send RSVP</button><button class="btn" type="button" data-qr>Check-in QR</button></div>
+    <p id="ok" style="color:var(--gold)"></p>
+  </form>
+</div></section>
+
+<!-- 17 GIFT -->
+<section class="gift"><div class="w">
+  <span class="eyebrow">Wedding Gift</span><h2 data-r>Your presence is <em>the gift</em></h2>
+  <p data-r style="max-width:48ch;margin:1.5rem auto 0">Should you wish to honour us further, a contribution toward our first home is warmly welcomed.</p>
+  <div class="glass" data-r><span class="eyebrow">Bank Transfer</span><b class="serif" style="font-size:1.8rem">BCA · 123 456 7890</b><br>a.n. Alya Putri</div>
+</div></section>
+
+<!-- 18 WISHES -->
+<section><div class="w">
+  <span class="eyebrow">Guest Book</span><h2 data-r>Warm <em>wishes</em></h2>
+  <div class="wl" id="wl">
+    <div class="glass"><b>Nadia</b><p>May your love grow quieter and deeper every year.</p></div>
+    <div class="glass"><b>Dimas</b><p>Two of my favourite people. Cannot wait to celebrate!</p></div>
+  </div>
+</div></section>
+
+<!-- 19 FAQ -->
+<section style="background:var(--warm)"><div class="w" style="max-width:820px">
+  <span class="eyebrow">Good to know</span><h2 data-r>Questions</h2><div style="margin-top:3rem">
+    <details><summary>Can I bring a plus-one?</summary><p>Your invitation lists the number of seats reserved for you.</p></details>
+    <details><summary>Is there parking?</summary><p>Complimentary valet is available at the main entrance.</p></details>
+    <details><summary>Are children welcome?</summary><p>Yes — we would love to celebrate with your whole family.</p></details>
+  </div>
+</div></section>
+
+<!-- 20 CLOSING -->
+<section class="close"><div>
+  <span class="eyebrow">With all our love</span>
+  <h2 data-split>See you <em class="shine">there</em></h2>
+  <p data-r style="max-width:44ch;margin:2rem auto">Thank you for being part of the story that led us here. Your blessing means the world.</p>
+</div></section>
+
+<!-- 21 FOOTER -->
+<footer><div class="big" id="ft">A &amp; R</div><small>14.02.2027 · Grand Ballroom Jakarta</small></footer>
+
+<!-- SHARED: fullscreen toggle · gallery preview · RSVP check-in QR -->
+<button id="fs" aria-label="Toggle full screen"><svg viewBox="0 0 24 24"><path class="a" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><path class="b" d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
+<div class="mdl" id="mg" role="dialog" aria-modal="true" aria-label="Photo preview" aria-hidden="true"><div class="mb"></div>
+  <figure class="mf"><div class="mi" id="mgi"></div><figcaption><span id="mgc"></span><small id="mgn"></small></figcaption></figure>
+  <button class="mx" data-x aria-label="Close preview">×</button><button class="mpv" id="mgp" aria-label="Previous photo">‹</button><button class="mnx" id="mgx" aria-label="Next photo">›</button></div>
+<div class="mdl" id="mq" role="dialog" aria-modal="true" aria-label="RSVP check-in" aria-hidden="true"><div class="mb"></div>
+  <div class="mc"><button class="mx" data-x aria-label="Close">×</button>
+    <span class="me">RSVP check-in</span><div class="mh">Digital pass</div>
+    <div class="mt" role="tablist"><button role="tab" data-t="show" class="on" aria-selected="true">My QR</button><button role="tab" data-t="scan" aria-selected="false">Scan</button></div>
+    <div data-p="show"><input id="qn" placeholder="Your name" aria-label="Your name" autocomplete="name"><select id="qg" aria-label="Guests"><option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option></select>
+      <button class="mbtn" id="qmake" type="button">Show my QR</button><div class="qbox" id="qbox"></div><p class="mhint" id="qinfo">Show this QR code at the welcome desk.</p></div>
+    <div data-p="scan" hidden><div class="vw"><video id="qv" playsinline muted></video></div><button class="mbtn" id="qscan" type="button">Start camera</button>
+      <p class="mres" id="qres" aria-live="polite">For the welcome desk: scan each guest's QR code.</p><p class="mhint" id="qcount"></p></div>
+  </div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ===== SETUP ===== */
+gsap.registerPlugin(ScrollTrigger);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, c=document) => [...c.querySelectorAll(s)];
+let lenis, heroTl;
+if (window.Lenis && !reduce) {
+  lenis = new Lenis({lerp:.09}); lenis.stop();
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0);
+}
+/* word splitter: wraps words (and keeps child spans/em) */
+function split(el){
+  const walk = n => [...n.childNodes].forEach(c => {
+    if (c.nodeType === 3) {
+      const f = document.createDocumentFragment();
+      c.textContent.split(/(\s+)/).forEach(w => {
+        if (!w.trim()) { f.append(w); return; }
+        const o = document.createElement('span'); o.style.cssText='display:inline-block;overflow:hidden;vertical-align:top';
+        const i = document.createElement('span'); i.className='w-i'; i.textContent=w; o.append(i); f.append(o);
+      }); c.replaceWith(f);
+    } else if (c.tagName !== 'BR') walk(c);
+  });
+  walk(el); return $('.w-i', el);
+}
+const inView = (el, vars, trig) => gsap.from(el, {...vars, scrollTrigger:{trigger:trig||el, start:'top 85%'}});
+if (!reduce) {
+/* ===== HERO ===== */
+const hw = split($('.hero h1')[0]);
+heroTl = gsap.timeline({paused:true, defaults:{ease:'power4.out'}})
+  .from('.hero .arc', {scale:.4, opacity:0, duration:2.2})
+  .from(hw, {yPercent:110, rotate:4, duration:1.6, stagger:.15}, .3)
+  .from('.h-in', {opacity:0, y:20, duration:1.2, stagger:.3}, 1.2);
+gsap.to('.hero .bg', {yPercent:18, scale:1.15, ease:'none', scrollTrigger:{trigger:'.hero', scrub:true, start:'top top', end:'bottom top'}});
+gsap.to('.hero .arc', {rotate:90, scale:1.3, ease:'none', scrollTrigger:{trigger:'.hero', scrub:true, start:'top top', end:'bottom top'}});
+for (let i=0;i<26;i++){ const p=document.createElement('span'); p.className='pt'; p.style.left=Math.random()*100+'%'; p.style.top=Math.random()*100+'%'; $('.hero')[0].append(p);
+  gsap.to(p,{y:gsap.utils.random(-80,-200), x:gsap.utils.random(-40,40), opacity:0, duration:gsap.utils.random(5,10), repeat:-1, delay:Math.random()*5, ease:'sine.inOut'}); }
+gsap.to('.scroll', {scaleY:.3, transformOrigin:'top', repeat:-1, yoyo:true, duration:1.2});
+/* ===== GENERIC REVEALS ===== */
+$('[data-r]').forEach(el => inView(el, {y:50, opacity:0, duration:1.3, ease:'power3.out'}));
+$('[data-split]').forEach(el => { if (el.closest('.hero')) return; inView(split(el), {yPercent:110, duration:1.3, stagger:.07, ease:'power4.out'}, el); });
+$('[data-mask]').forEach(el => { gsap.from(el, {clipPath:'inset(100% 0 0 0)', duration:1.6, ease:'power4.inOut', scrollTrigger:{trigger:el, start:'top 85%'}});
+  gsap.from($('span',el), {scale:1.5, ease:'none', scrollTrigger:{trigger:el, scrub:true, start:'top bottom', end:'bottom top'}}); });
+gsap.to('.p2', {yPercent:-8, ease:'none', scrollTrigger:{trigger:'.couple', scrub:true}});
+/* ===== PINNED TIMELINE ===== */
+const st = $('.st'), years=[2019,2021,2023,2026], yr=$('#yr');
+const tl = gsap.timeline({scrollTrigger:{trigger:'#tl', pin:true, scrub:.8, start:'top top', end:'+=400%'}});
+st.forEach((s,i) => { const t=i*2, y={v:i?years[i-1]:years[0]};
+  tl.fromTo(s,{opacity:0,y:60,scale:.96},{opacity:1,y:0,scale:1,duration:.7},t)
+    .to(y,{v:years[i],duration:.7,onUpdate:()=>yr.textContent=Math.round(y.v)},t);
+  if (i<st.length-1) tl.to(s,{opacity:0,y:-60,duration:.7},t+1.3); });
+tl.to('.bar i',{scaleX:1,ease:'none',duration:tl.duration()},0);
+/* ===== HORIZONTAL JOURNEY ===== */
+const trk=$('.trk')[0];
+gsap.to(trk,{x:()=>-(trk.scrollWidth-innerWidth), ease:'none', scrollTrigger:{trigger:'#hz', pin:true, scrub:.6, end:()=>'+='+trk.scrollWidth, invalidateOnRefresh:true}});
+/* ===== GALLERY STACK ===== */
+const cds=$('.cd'); cds.forEach((c,i)=>gsap.set(c,{rotate:(i-2)*4, y:(cds.length-i)*6, zIndex:cds.length-i}));
+const gt=gsap.timeline({scrollTrigger:{trigger:'#gal', pin:true, scrub:.8, end:'+=250%'}});
+cds.slice(0,-1).forEach((c,i)=>gt.to(c,{x:(i%2?1:-1)*innerWidth*.6, rotate:(i%2?1:-1)*25, opacity:0, duration:1, ease:'power2.in'}).to(cds[i+1],{rotate:0,y:0,duration:1},'<'));
+$('.gal h2').forEach(h=>gsap.to(h,{yPercent:-40, scrollTrigger:{trigger:'#gal', scrub:true, end:'+=250%'}}));
+/* ===== ENGAGEMENT MASK ===== */
+gsap.to('#mask',{clipPath:'inset(0 0% 0 0)', duration:1.8, ease:'power4.inOut', scrollTrigger:{trigger:'#mask', start:'top 80%'}});
+/* ===== QUOTE word-by-word scrub ===== */
+gsap.to(split($('#qt')[0]),{opacity:1, stagger:.1, ease:'none', scrollTrigger:{trigger:'.qt', scrub:true, start:'top 60%', end:'bottom 70%'}});
+/* ===== COUNTDOWN reveal ===== */
+gsap.from('.cdn .glass',{y:60, opacity:0, stagger:.12, duration:1.1, ease:'power3.out', scrollTrigger:{trigger:'#cdn', start:'top 85%'}});
+/* ===== RSVP + FOOTER ===== */
+gsap.from('#rsvp > *',{y:40, opacity:0, stagger:.12, duration:1, ease:'power3.out', scrollTrigger:{trigger:'#rsvp', start:'top 85%'}});
+gsap.from('#ft',{yPercent:60, opacity:0, scale:.8, ease:'none', scrollTrigger:{trigger:'footer', scrub:true, start:'top bottom', end:'center 70%'}});
+gsap.from('footer small',{opacity:0, y:20, scrollTrigger:{trigger:'footer small', start:'top 95%'}});
+/* ===== MICRO: cursor glow + magnetic ===== */
+const gx=gsap.quickTo('#glow','x',{duration:.6}), gy=gsap.quickTo('#glow','y',{duration:.6});
+addEventListener('pointermove',e=>{gx(e.clientX);gy(e.clientY)});
+$('.btn').forEach(b=>{ const mx=gsap.quickTo(b,'x',{duration:.5,ease:'power3'}), my=gsap.quickTo(b,'y',{duration:.5,ease:'power3'});
+  b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();mx((e.clientX-r.left-r.width/2)*.3);my((e.clientY-r.top-r.height/2)*.3)});
+  b.addEventListener('pointerleave',()=>{mx(0);my(0)}); });
+} else { $('.st,.cd').forEach(e=>e.style.opacity=1); $('#mask')[0].style.clipPath='none'; $('.w-i').forEach(e=>e.style.opacity=1); }
+/* ===== GENERATIVE MUSIC (Web Audio, no files) ===== */
+const music=(()=>{let ctx,master,timer,on=false,i=0;const btn=$('#mus')[0];
+  const ch=[[261.6,329.6,392,493.9],[220,261.6,329.6,392],[174.6,261.6,329.6,440],[196,246.9,293.7,392]];
+  const note=(f,t,d,v,type)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+d*.3);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(master);o.start(t);o.stop(t+d+.1)};
+  const bar=()=>{const t=ctx.currentTime+.05,c=ch[i++%4];c.forEach(f=>note(f/2,t,5,.05,'sine'));c.forEach((f,k)=>note(f*2,t+k*.5,2.2,.035,'triangle'));[...c].reverse().forEach((f,k)=>note(f*2,t+2.4+k*.4,2,.025,'triangle'))};
+  const set=v=>{on=v;btn.classList.toggle('on',v);btn.setAttribute('aria-pressed',v)};
+  return{get on(){return on},toggle(){
+    try{ if(!ctx){const AC=window.AudioContext||window.webkitAudioContext;ctx=new AC();master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination)}
+      if(!on){set(true);ctx.resume();master.gain.setTargetAtTime(.9,ctx.currentTime,.6);bar();timer=setInterval(bar,4800)}
+      else{set(false);master.gain.setTargetAtTime(0,ctx.currentTime,.3);clearInterval(timer);setTimeout(()=>!on&&ctx.suspend(),1500)}
+    }catch(e){set(false)} }}})();
+$('#mus')[0].addEventListener('click',()=>music.toggle());
+/* ===== ENVELOPE INTRO ===== */
+function finishIntro(){ $('#intro')[0].remove(); document.documentElement.classList.remove('lock'); scrollTo(0,0);
+  if(lenis) lenis.start(); if(heroTl) heroTl.play(); ScrollTrigger.refresh();
+  gsap.to('#mus',{opacity:1,duration:1,pointerEvents:'auto'}); }
+$('#open')[0].addEventListener('click',e=>{ e.currentTarget.disabled=true; music.toggle(); WED.goFull();
+  if(reduce){ $('#mus')[0].style.cssText='opacity:1;pointer-events:auto'; return finishIntro(); }
+  const L=gsap.timeline({onComplete:finishIntro,defaults:{ease:'power3.inOut'}});
+  L.to('#open,#intro p',{opacity:0,y:20,duration:.6})
+   .to('.seal',{scale:0,rotate:90,duration:.6},0)
+   .to('.flap',{rotateX:180,duration:1.1},.4).set('.flap',{zIndex:0},.9)
+   .to('.card',{yPercent:-75,duration:1.1,ease:'power2.out'},1.3)
+   .to('.env',{scale:2.6,duration:1.4},2.1)
+   .to('#intro',{opacity:0,duration:.9},2.5); });
+/* ===== COUNTDOWN ===== */
+const target=new Date('2027-02-14T09:00:00+07:00'), u={};
+$('[data-u]').forEach(e=>u[e.dataset.u]=e);
+(function tick(){ let d=Math.max(0,target-Date.now())/1000;
+  const v={d:Math.floor(d/86400),h:Math.floor(d%86400/3600),m:Math.floor(d%3600/60),s:Math.floor(d%60)};
+  for(const k in u) u[k].textContent=String(v[k]).padStart(k==='d'?1:2,'0'); setTimeout(tick,1000); })();
+/* ===== RSVP + WISHES ===== */
+$('#rsvp')[0].addEventListener('submit',e=>{ e.preventDefault(); const f=e.target, n=f[0].value, w=f[3].value;
+  $('#ok')[0].textContent='Thank you, '+n+' — your reply has been received.';
+  if (w){ const d=document.createElement('div'); d.className='glass'; const b=document.createElement('b'), p=document.createElement('p'); b.textContent=n; p.textContent=w; d.append(b,p); $('#wl')[0].prepend(d); gsap.from(d,{y:30,opacity:0,duration:.8}); ScrollTrigger.refresh(); }
+  f.reset(); });
+addEventListener('load',()=>ScrollTrigger.refresh());
+/* modal open => pause smooth scrolling */
+addEventListener('wed:modal',e=>{if(lenis&&!document.documentElement.classList.contains('lock')){e.detail?lenis.stop():lenis.start()}});
+</script>
+<script>
+/* ===== SHARED: full screen · gallery preview modal · RSVP check-in QR (works in every theme) ===== */
+(()=>{
+const q=(s,c=document)=>c.querySelector(s),qa=(s,c=document)=>[...c.querySelectorAll(s)],root=document.documentElement;
+const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+const loadJS=u=>new Promise((ok,no)=>{const s=document.createElement('script');s.src=u;s.onload=ok;s.onerror=no;document.head.append(s)});
+const QRLIB='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js',JSQR='https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js';
+
+/* ---- 1. FULL SCREEN (needs a user gesture: call WED.goFull() from the "open invitation" click) ---- */
+const fsOK=!!(document.fullscreenEnabled||document.webkitFullscreenEnabled),isFS=()=>!!(document.fullscreenElement||document.webkitFullscreenElement);
+function goFull(){if(!fsOK||isFS())return;try{const r=(root.requestFullscreen||root.webkitRequestFullscreen).call(root);r&&r.catch&&r.catch(()=>{})}catch(e){}}
+function toggleFS(){if(isFS()){try{(document.exitFullscreen||document.webkitExitFullscreen).call(document)}catch(e){}}else goFull()}
+const fsb=q('#fs');
+if(fsb){if(!fsOK)fsb.remove();else{fsb.onclick=toggleFS;const sync=()=>fsb.classList.toggle('on',isFS());['fullscreenchange','webkitfullscreenchange'].forEach(t=>document.addEventListener(t,sync))}}
+window.WED={goFull,toggleFS};
+
+/* ---- modal manager: focus trap, Esc, scroll lock, theme hook (event "wed:modal") ---- */
+let openM=null,lastFocus=null;
+qa('.mdl').forEach(m=>{m.inert=true;
+  ['wheel','touchmove'].forEach(t=>m.addEventListener(t,e=>{e.stopPropagation();if(!e.target.closest('.mc'))e.preventDefault()},{passive:false}));
+  ['touchstart','touchend','pointerdown','pointerup'].forEach(t=>m.addEventListener(t,e=>e.stopPropagation(),{passive:true}));
+  m.addEventListener('click',e=>{if(e.target.closest('[data-x]')||e.target.classList.contains('mb'))close()})});
+function open(m){if(openM)close();lastFocus=document.activeElement;openM=m;m.inert=false;m.classList.add('open');m.setAttribute('aria-hidden','false');root.classList.add('mo');
+  window.dispatchEvent(new CustomEvent('wed:modal',{detail:true}));setTimeout(()=>(q('[data-x]',m)||m).focus(),60)}
+function close(){if(!openM)return;const m=openM;openM=null;m.classList.remove('open');m.setAttribute('aria-hidden','true');m.inert=true;root.classList.remove('mo');
+  stopScan();window.dispatchEvent(new CustomEvent('wed:modal',{detail:false}));lastFocus&&lastFocus.focus&&lastFocus.focus()}
+document.addEventListener('keydown',e=>{if(!openM)return;e.stopPropagation();const k=e.key;
+  if(k==='Escape'){e.preventDefault();close();return}
+  if(openM.id==='mg'){if(k==='ArrowRight'){e.preventDefault();step(1)}else if(k==='ArrowLeft'){e.preventDefault();step(-1)}}
+  if(k==='Tab'){const f=qa('button,input,select,video',openM).filter(x=>!x.disabled&&x.offsetParent!==null&&x.tagName!=='VIDEO');if(f.length){e.preventDefault();const i=f.indexOf(document.activeElement);f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus()}}
+  else if(!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)&&[' ','PageUp','PageDown','Home','End','ArrowUp','ArrowDown'].includes(k))e.preventDefault()},true);
+
+/* ---- 2. GALLERY PREVIEW: any element with [data-gi] (works with gradient placeholders or <img>/background photos) ---- */
+const mg=q('#mg'),gimg=q('#mgi'),gcap=q('#mgc'),gnum=q('#mgn');let gl=[],gi=0;
+function show(i){gi=(i+gl.length)%gl.length;const el=gl[gi],img=q('img',el);
+  gimg.style.backgroundImage=img?`url("${img.currentSrc||img.src}")`:getComputedStyle(el).backgroundImage;
+  gcap.textContent=el.dataset.cap||el.textContent.trim();gnum.textContent=(gi+1)+' / '+gl.length;
+  gimg.classList.remove('sw');void gimg.offsetWidth;gimg.classList.add('sw')}
+const step=d=>show(gi+d);
+function openGal(el){gl=qa('[data-gi]');show(gl.indexOf(el));open(mg)}
+qa('[data-gi]').forEach(el=>{el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label','Preview '+(el.dataset.cap||el.textContent.trim()));el.style.cursor='zoom-in'});
+document.addEventListener('click',e=>{if(openM)return;const t=e.target.closest('[data-gi]');if(t){openGal(t);return}if(e.target.closest('[data-qr]'))openQR()});
+document.addEventListener('keydown',e=>{if(openM)return;const t=e.target.closest&&e.target.closest('[data-gi]');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();e.stopPropagation();openGal(t)}});
+q('#mgp').onclick=()=>step(-1);q('#mgx').onclick=()=>step(1);
+let sx=0;mg.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});mg.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)step(d<0?1:-1)},{passive:true});
+
+/* ---- 3. RSVP CHECK-IN QR: show my pass / scan guests ---- */
+const mq=q('#mq'),qn=q('#qn'),qg=q('#qg'),qbox=q('#qbox'),qinfo=q('#qinfo'),vid=q('#qv'),qres=q('#qres'),sbtn=q('#qscan');
+function tab(t){qa('.mt button',mq).forEach(b=>{const on=b.dataset.t===t;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});qa('[data-p]',mq).forEach(p=>p.hidden=p.dataset.p!==t);if(t!=='scan')stopScan();if(t==='scan')count()}
+qa('.mt button',mq).forEach(b=>b.onclick=()=>tab(b.dataset.t));
+function openQR(){const g=store.get('wed_guest');if(g&&!qn.value)qn.value=g;tab('show');open(mq)}
+document.addEventListener('submit',e=>{if(e.target.id!=='rsvp')return;const n=e.target.querySelector('input');if(n&&n.value.trim()){store.set('wed_guest',n.value.trim());qn.value=n.value.trim()}},true);
+const codeFor=n=>{const k='wed_code_'+n.toLowerCase();let c=store.get(k);if(!c){c=Math.random().toString(36).slice(2,8).toUpperCase();store.set(k,c)}return c};
+async function makeQR(){const name=qn.value.trim();if(!name){qinfo.textContent='Please enter your name first.';qn.focus();return}
+  const n=qg.selectedIndex+1,code=codeFor(name),payload=['WED','AR',code,name.replace(/\|/g,' '),n].join('|');store.set('wed_guest',name);qbox.innerHTML='';
+  const label=name+' · '+n+(n>1?' guests':' guest')+' · Code '+code;
+  try{if(!window.QRCode)await loadJS(QRLIB);new QRCode(qbox,{text:payload,width:208,height:208,colorDark:'#111111',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});qinfo.textContent=label+'. Show this at the welcome desk.'}
+  catch(e){qinfo.textContent='The QR library could not load (check your connection). '+label}}
+q('#qmake').onclick=makeQR;qn.addEventListener('keydown',e=>{if(e.key==='Enter')makeQR()});
+
+let stream=null,timer=null,det=null,cool=0;const cvs=document.createElement('canvas');
+const say=(t,ok)=>{qres.textContent=t;qres.className='mres'+(ok===true?' ok':ok===false?' no':'')};
+const readLog=()=>{try{return JSON.parse(store.get('wed_checkins')||'{}')}catch(e){return{}}};
+function count(){q('#qcount').textContent=Object.keys(readLog()).length+' checked in on this device'}
+async function startScan(){
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){say('Camera is not available here. Open the invitation in its own browser tab.',false);return}
+  try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false})}catch(e){say('Camera access was blocked. Allow it in your browser and try again.',false);return}
+  vid.srcObject=stream;await vid.play().catch(()=>{});sbtn.textContent='Stop camera';say('Point the camera at a guest QR code.');
+  if('BarcodeDetector' in window){try{det=new BarcodeDetector({formats:['qr_code']})}catch(e){det=null}}
+  if(!det&&!window.jsQR){try{await loadJS(JSQR)}catch(e){say('The scanner library could not load.',false);stopScan();return}}
+  loop()}
+function loop(){timer=setTimeout(async()=>{if(!stream)return;let val=null;
+  try{if(vid.readyState>=2){if(det){const r=await det.detect(vid);if(r[0])val=r[0].rawValue}
+    else{const w=vid.videoWidth,h=vid.videoHeight,sc=Math.min(1,480/w);cvs.width=w*sc|0;cvs.height=h*sc|0;const c=cvs.getContext('2d',{willReadFrequently:true});c.drawImage(vid,0,0,cvs.width,cvs.height);const d=c.getImageData(0,0,cvs.width,cvs.height),r=window.jsQR(d.data,d.width,d.height);if(r)val=r.data}}}catch(e){}
+  if(val&&Date.now()>cool){cool=Date.now()+2200;handle(val)}loop()},140)}
+function stopScan(){clearTimeout(timer);timer=null;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}if(vid)vid.srcObject=null;if(sbtn)sbtn.textContent='Start camera'}
+function handle(v){const p=String(v).split('|');if(p[0]!=='WED'||p.length<5){say('This is not an invitation QR code.',false);return}
+  const code=p[2],name=p[3],n=p[4],log=readLog();if(log[code]){say('Already checked in at '+log[code].t+': '+name,false);return}
+  log[code]={name,n,t:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})};store.set('wed_checkins',JSON.stringify(log));
+  if(navigator.vibrate)navigator.vibrate(80);say('✓ Checked in: '+name+' · '+n+(+n>1?' guests':' guest'),true);count()}
+sbtn.onclick=()=>stream?stopScan():startScan();
+})();
+</script>
+</body>
+</html>

@@ -76,6 +76,36 @@ input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1
 .ri button.a .ic{background:var(--acc);color:var(--bg);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 28%,transparent)}
 @media(max-width:700px){.nm{display:none}}
 @media(prefers-reduced-motion:reduce){.st{animation:none}}
+
+/* ===== SHARED: full screen · gallery preview modal · RSVP check-in QR modal ===== */
+.mdl,#fs{--ma:var(--acc,var(--gold,#b8955a));--mbg:var(--bg,#f6f0e6);--mink:var(--ink,#2a2624);--ml:var(--line,rgba(184,149,90,.4));--mfont:var(--serif,var(--sf,Georgia,serif));--msans:var(--sans,var(--sn,system-ui,sans-serif))}
+#fs{position:fixed;z-index:95;right:max(1rem,env(safe-area-inset-right,0px));bottom:calc(max(1rem,env(safe-area-inset-bottom,0px)) + 58px);width:40px;height:40px;border-radius:50%;border:1px solid var(--ma);background:var(--card,var(--panel,rgba(255,255,255,.5)));display:grid;place-items:center;cursor:pointer;color:var(--ma);transition:opacity .6s}
+#fs svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}#fs .b,#fs.on .a{display:none}#fs.on .b{display:inline}
+html.lock #fs{opacity:0;pointer-events:none}
+.mdl{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:max(1rem,env(safe-area-inset-top,0px)) max(1rem,env(safe-area-inset-right,0px)) max(1rem,env(safe-area-inset-bottom,0px)) max(1rem,env(safe-area-inset-left,0px));opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;font-family:var(--msans);text-align:left}
+.mdl.open{opacity:1;visibility:visible}
+.mb{position:absolute;inset:0;background:rgba(10,8,6,.84);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.mx{position:absolute;z-index:3;top:max(.8rem,env(safe-area-inset-top,0px));right:max(.8rem,env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--ma);background:rgba(0,0,0,.35);color:#fff;font:300 1.6rem/1 var(--msans);cursor:pointer}
+.mf{position:relative;z-index:2;width:min(88vw,520px);transform:scale(.94);transition:transform .45s cubic-bezier(.2,.8,.2,1)}.mdl.open .mf{transform:none}
+.mi{width:100%;height:min(70svh,calc(min(88vw,520px)*1.33));background-size:cover;background-position:center;border:1px solid var(--ma);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.mi.sw{animation:mswap .45s ease}@keyframes mswap{from{opacity:0;transform:scale(1.03)}}
+.mf figcaption{margin-top:.9rem;text-align:center;color:#fff}#mgc{font:italic 300 1.5rem/1.2 var(--mfont)}#mgn{display:block;font-size:.7rem;letter-spacing:.3em;opacity:.7;margin-top:.2rem}
+.mpv,.mnx{position:absolute;z-index:3;top:50%;translate:0 -50%;width:44px;height:44px;border-radius:50%;border:1px solid var(--ma);background:rgba(0,0,0,.35);color:#fff;font:300 1.5rem/1 var(--msans);cursor:pointer}
+.mpv{left:max(.6rem,env(safe-area-inset-left,0px))}.mnx{right:max(.6rem,env(safe-area-inset-right,0px))}
+.mx:hover,.mpv:hover,.mnx:hover{background:var(--ma);color:var(--mbg)}
+.mc{position:relative;z-index:2;width:min(92vw,400px);max-height:calc(100svh - 2rem);overflow:auto;overscroll-behavior:contain;padding:1.8rem 1.4rem 1.5rem;background:var(--mbg);color:var(--mink);border:1px solid var(--ml);text-align:center;transform:translateY(14px);transition:transform .45s cubic-bezier(.2,.8,.2,1)}.mdl.open .mc{transform:none}
+.mc .mx{top:.5rem;right:.5rem;width:38px;height:38px;background:none;color:var(--mink)}
+.me{display:block;font:400 .66rem var(--msans);letter-spacing:.32em;text-transform:uppercase;color:var(--ma)}.mh{font:300 2rem/1.1 var(--mfont);margin:.3rem 0 .2rem}
+.mt{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ml);margin:1rem 0 .6rem}.mt button{padding:.7rem;background:none;border:0;color:var(--mink);font:400 .68rem var(--msans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.mt button.on{background:var(--ma);color:var(--mbg)}
+.mc [data-p]{display:block}.mc [data-p][hidden]{display:none}
+.mc input,.mc select{width:100%;margin-top:.7rem}
+.mbtn{display:inline-block;margin-top:1rem;padding:.85rem 1.7rem;border:1px solid var(--ma);background:transparent;color:var(--mink);font:400 .68rem var(--msans);letter-spacing:.25em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s}.mbtn:hover{background:var(--ma);color:var(--mbg)}
+.qbox{display:grid;place-items:center;margin:1.1rem auto .4rem;padding:12px;background:#fff;width:fit-content}.qbox:empty{display:none}.qbox img,.qbox canvas{display:block;max-width:100%;height:auto}
+.mhint{margin:.7rem auto 0;max-width:34ch;font-size:.82rem;opacity:.8;text-align:center}
+.vw{position:relative;aspect-ratio:1;width:100%;background:#000;overflow:hidden;margin-top:.8rem}.vw video{width:100%;height:100%;object-fit:cover}.vw::after{content:"";position:absolute;inset:16%;border:2px dashed var(--ma);opacity:.9}
+.mres{min-height:1.4em;margin:.8rem auto 0;font-size:.9rem;text-align:center}.mres.ok{color:#3aa56a}.mres.no{color:#e0654f}
+@media(prefers-reduced-motion:reduce){.mdl,.mf,.mc{transition:none}.mi.sw{animation:none}}
+#fs{top:calc(max(12px,env(safe-area-inset-top,0px)) + 52px);bottom:auto;right:calc(max(14px,env(safe-area-inset-right,0px)) + 46px);width:26px;height:22px;border:0;border-radius:0;background:none}
 </style>
 </head>
 <body>
@@ -105,12 +135,26 @@ input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1
 <!-- 7 COUNTDOWN -->
 <section class="s" data-t="Countdown" data-ic="hourglass"><div class="c"><span class="eb it">Countdown</span><div class="cd it"><div class="pn"><b data-u="d">0</b><span>Days</span></div><div class="pn"><b data-u="h">0</b><span>Hours</span></div><div class="pn"><b data-u="m">0</b><span>Min</span></div><div class="pn"><b data-u="s">0</b><span>Sec</span></div></div><h2 class="it">Until we <i>say yes</i></h2></div></section>
 <!-- 8 GALLERY -->
-<section class="s" data-t="Gallery" data-ic="image"><div class="c"><span class="eb it">Moments</span><div class="gl it"><div class="g1">Golden hour</div><div class="g2">Midnight train</div><div class="g3">Sunday slow</div><div class="g4">The question</div><div class="g5">Coastal</div></div></div></section>
+<section class="s" data-t="Gallery" data-ic="image"><div class="c"><span class="eb it">Moments · tap to preview</span><div class="gl it"><div class="g1" data-gi>Golden hour</div><div class="g2" data-gi>Midnight train</div><div class="g3" data-gi>Sunday slow</div><div class="g4" data-gi>The question</div><div class="g5" data-gi>Coastal</div></div></div></section>
 <!-- 9 FAMILY + GIFT -->
 <section class="s" data-t="Family" data-ic="home"><div class="c"><span class="eb it">With love from</span><div class="row"><div class="it"><h3>Family of the Bride</h3><p>Bapak Hendra Putri<br>&amp; Ibu Sari Dewi</p></div><div class="it"><h3>Family of the Groom</h3><p>Bapak Agus Pratama<br>&amp; Ibu Lestari Wulan</p></div></div><div class="pn it" style="margin-top:1.4rem"><span class="eb">Gift</span><p style="margin-bottom:.4rem">Your presence is the gift. A token toward our new home is warmly welcomed.</p><b class="mo" style="color:var(--ink)">BCA · 123 456 7890 · a.n. Alya Putri</b></div></div></section>
 <!-- 10 RSVP -->
-<section class="s" data-t="RSVP" data-ic="check"><div class="c"><span class="eb it">RSVP</span><h2 class="it">Will you <i>join us?</i></h2><form id="rsvp" class="it"><input required placeholder="Full name" aria-label="Full name"><select aria-label="Attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select><textarea rows="2" placeholder="A wish for the couple" aria-label="Wish"></textarea><button class="btn" type="submit" style="justify-self:center">Send RSVP</button><p id="ok"></p></form><p class="mo it">Thank you for being part of our story</p></div></section>
+<section class="s" data-t="RSVP" data-ic="check"><div class="c"><span class="eb it">RSVP</span><h2 class="it">Will you <i>join us?</i></h2><form id="rsvp" class="it"><input required placeholder="Full name" aria-label="Full name"><select aria-label="Attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select><textarea rows="2" placeholder="A wish for the couple" aria-label="Wish"></textarea><div style="display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap"><button class="btn" type="submit" style="margin-top:.4rem">Send RSVP</button><button class="btn" type="button" data-qr style="margin-top:.4rem">Check-in QR</button></div><p id="ok"></p></form><p class="mo it">Thank you for being part of our story</p></div></section>
 
+<!-- SHARED: fullscreen toggle · gallery preview · RSVP check-in QR -->
+<button id="fs" aria-label="Toggle full screen"><svg viewBox="0 0 24 24"><path class="a" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><path class="b" d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
+<div class="mdl" id="mg" role="dialog" aria-modal="true" aria-label="Photo preview" aria-hidden="true"><div class="mb"></div>
+  <figure class="mf"><div class="mi" id="mgi"></div><figcaption><span id="mgc"></span><small id="mgn"></small></figcaption></figure>
+  <button class="mx" data-x aria-label="Close preview">×</button><button class="mpv" id="mgp" aria-label="Previous photo">‹</button><button class="mnx" id="mgx" aria-label="Next photo">›</button></div>
+<div class="mdl" id="mq" role="dialog" aria-modal="true" aria-label="RSVP check-in" aria-hidden="true"><div class="mb"></div>
+  <div class="mc"><button class="mx" data-x aria-label="Close">×</button>
+    <span class="me">RSVP check-in</span><div class="mh">Digital pass</div>
+    <div class="mt" role="tablist"><button role="tab" data-t="show" class="on" aria-selected="true">My QR</button><button role="tab" data-t="scan" aria-selected="false">Scan</button></div>
+    <div data-p="show"><input id="qn" placeholder="Your name" aria-label="Your name" autocomplete="name"><select id="qg" aria-label="Guests"><option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option></select>
+      <button class="mbtn" id="qmake" type="button">Show my QR</button><div class="qbox" id="qbox"></div><p class="mhint" id="qinfo">Show this QR code at the welcome desk.</p></div>
+    <div data-p="scan" hidden><div class="vw"><video id="qv" playsinline muted></video></div><button class="mbtn" id="qscan" type="button">Start camera</button>
+      <p class="mres" id="qres" aria-live="polite">For the welcome desk: scan each guest's QR code.</p><p class="mhint" id="qcount"></p></div>
+  </div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script>
 /* ===== SETUP ===== */
@@ -177,13 +221,96 @@ const music=(()=>{let ctx,m,timer,on=false,n=0;const btn=$('#mus')[0];
     if(!on){set(true);ctx.resume();m.gain.setTargetAtTime(.9,ctx.currentTime,.8);bar();timer=setInterval(bar,5600)}
     else{set(false);m.gain.setTargetAtTime(0,ctx.currentTime,.3);clearInterval(timer);setTimeout(()=>!on&&ctx.suspend(),1500)}}catch(e){set(false)}}}})();
 $('#mus')[0].onclick=()=>music.toggle();
-$('#begin')[0].onclick=()=>{if(!music.on)music.toggle();go(1)};
+$('#begin')[0].onclick=()=>{WED.goFull();if(!music.on)music.toggle();go(1)};
 
 /* ===== COUNTDOWN + RSVP ===== */
 const u={};$('[data-u]').forEach(e=>u[e.dataset.u]=e);
 (function tick(){const d=Math.max(0,TARGET-Date.now())/1000,v={d:Math.floor(d/86400),h:Math.floor(d%86400/3600),m:Math.floor(d%3600/60),s:Math.floor(d%60)};
   for(const k in u)u[k].textContent=String(v[k]).padStart(k==='d'?1:2,'0');setTimeout(tick,1000)})();
 $('#rsvp')[0].addEventListener('submit',e=>{e.preventDefault();const f=e.target;$('#ok')[0].textContent='Thank you, '+f[0].value+'. Your reply has been received.';f.reset()});
+</script>
+<script>
+/* ===== SHARED: full screen · gallery preview modal · RSVP check-in QR (works in every theme) ===== */
+(()=>{
+const q=(s,c=document)=>c.querySelector(s),qa=(s,c=document)=>[...c.querySelectorAll(s)],root=document.documentElement;
+const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+const loadJS=u=>new Promise((ok,no)=>{const s=document.createElement('script');s.src=u;s.onload=ok;s.onerror=no;document.head.append(s)});
+const QRLIB='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js',JSQR='https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js';
+
+/* ---- 1. FULL SCREEN (needs a user gesture: call WED.goFull() from the "open invitation" click) ---- */
+const fsOK=!!(document.fullscreenEnabled||document.webkitFullscreenEnabled),isFS=()=>!!(document.fullscreenElement||document.webkitFullscreenElement);
+function goFull(){if(!fsOK||isFS())return;try{const r=(root.requestFullscreen||root.webkitRequestFullscreen).call(root);r&&r.catch&&r.catch(()=>{})}catch(e){}}
+function toggleFS(){if(isFS()){try{(document.exitFullscreen||document.webkitExitFullscreen).call(document)}catch(e){}}else goFull()}
+const fsb=q('#fs');
+if(fsb){if(!fsOK)fsb.remove();else{fsb.onclick=toggleFS;const sync=()=>fsb.classList.toggle('on',isFS());['fullscreenchange','webkitfullscreenchange'].forEach(t=>document.addEventListener(t,sync))}}
+window.WED={goFull,toggleFS};
+
+/* ---- modal manager: focus trap, Esc, scroll lock, theme hook (event "wed:modal") ---- */
+let openM=null,lastFocus=null;
+qa('.mdl').forEach(m=>{m.inert=true;
+  ['wheel','touchmove'].forEach(t=>m.addEventListener(t,e=>{e.stopPropagation();if(!e.target.closest('.mc'))e.preventDefault()},{passive:false}));
+  ['touchstart','touchend','pointerdown','pointerup'].forEach(t=>m.addEventListener(t,e=>e.stopPropagation(),{passive:true}));
+  m.addEventListener('click',e=>{if(e.target.closest('[data-x]')||e.target.classList.contains('mb'))close()})});
+function open(m){if(openM)close();lastFocus=document.activeElement;openM=m;m.inert=false;m.classList.add('open');m.setAttribute('aria-hidden','false');root.classList.add('mo');
+  window.dispatchEvent(new CustomEvent('wed:modal',{detail:true}));setTimeout(()=>(q('[data-x]',m)||m).focus(),60)}
+function close(){if(!openM)return;const m=openM;openM=null;m.classList.remove('open');m.setAttribute('aria-hidden','true');m.inert=true;root.classList.remove('mo');
+  stopScan();window.dispatchEvent(new CustomEvent('wed:modal',{detail:false}));lastFocus&&lastFocus.focus&&lastFocus.focus()}
+document.addEventListener('keydown',e=>{if(!openM)return;e.stopPropagation();const k=e.key;
+  if(k==='Escape'){e.preventDefault();close();return}
+  if(openM.id==='mg'){if(k==='ArrowRight'){e.preventDefault();step(1)}else if(k==='ArrowLeft'){e.preventDefault();step(-1)}}
+  if(k==='Tab'){const f=qa('button,input,select,video',openM).filter(x=>!x.disabled&&x.offsetParent!==null&&x.tagName!=='VIDEO');if(f.length){e.preventDefault();const i=f.indexOf(document.activeElement);f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus()}}
+  else if(!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)&&[' ','PageUp','PageDown','Home','End','ArrowUp','ArrowDown'].includes(k))e.preventDefault()},true);
+
+/* ---- 2. GALLERY PREVIEW: any element with [data-gi] (works with gradient placeholders or <img>/background photos) ---- */
+const mg=q('#mg'),gimg=q('#mgi'),gcap=q('#mgc'),gnum=q('#mgn');let gl=[],gi=0;
+function show(i){gi=(i+gl.length)%gl.length;const el=gl[gi],img=q('img',el);
+  gimg.style.backgroundImage=img?`url("${img.currentSrc||img.src}")`:getComputedStyle(el).backgroundImage;
+  gcap.textContent=el.dataset.cap||el.textContent.trim();gnum.textContent=(gi+1)+' / '+gl.length;
+  gimg.classList.remove('sw');void gimg.offsetWidth;gimg.classList.add('sw')}
+const step=d=>show(gi+d);
+function openGal(el){gl=qa('[data-gi]');show(gl.indexOf(el));open(mg)}
+qa('[data-gi]').forEach(el=>{el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label','Preview '+(el.dataset.cap||el.textContent.trim()));el.style.cursor='zoom-in'});
+document.addEventListener('click',e=>{if(openM)return;const t=e.target.closest('[data-gi]');if(t){openGal(t);return}if(e.target.closest('[data-qr]'))openQR()});
+document.addEventListener('keydown',e=>{if(openM)return;const t=e.target.closest&&e.target.closest('[data-gi]');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();e.stopPropagation();openGal(t)}});
+q('#mgp').onclick=()=>step(-1);q('#mgx').onclick=()=>step(1);
+let sx=0;mg.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});mg.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)step(d<0?1:-1)},{passive:true});
+
+/* ---- 3. RSVP CHECK-IN QR: show my pass / scan guests ---- */
+const mq=q('#mq'),qn=q('#qn'),qg=q('#qg'),qbox=q('#qbox'),qinfo=q('#qinfo'),vid=q('#qv'),qres=q('#qres'),sbtn=q('#qscan');
+function tab(t){qa('.mt button',mq).forEach(b=>{const on=b.dataset.t===t;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});qa('[data-p]',mq).forEach(p=>p.hidden=p.dataset.p!==t);if(t!=='scan')stopScan();if(t==='scan')count()}
+qa('.mt button',mq).forEach(b=>b.onclick=()=>tab(b.dataset.t));
+function openQR(){const g=store.get('wed_guest');if(g&&!qn.value)qn.value=g;tab('show');open(mq)}
+document.addEventListener('submit',e=>{if(e.target.id!=='rsvp')return;const n=e.target.querySelector('input');if(n&&n.value.trim()){store.set('wed_guest',n.value.trim());qn.value=n.value.trim()}},true);
+const codeFor=n=>{const k='wed_code_'+n.toLowerCase();let c=store.get(k);if(!c){c=Math.random().toString(36).slice(2,8).toUpperCase();store.set(k,c)}return c};
+async function makeQR(){const name=qn.value.trim();if(!name){qinfo.textContent='Please enter your name first.';qn.focus();return}
+  const n=qg.selectedIndex+1,code=codeFor(name),payload=['WED','AR',code,name.replace(/\|/g,' '),n].join('|');store.set('wed_guest',name);qbox.innerHTML='';
+  const label=name+' · '+n+(n>1?' guests':' guest')+' · Code '+code;
+  try{if(!window.QRCode)await loadJS(QRLIB);new QRCode(qbox,{text:payload,width:208,height:208,colorDark:'#111111',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});qinfo.textContent=label+'. Show this at the welcome desk.'}
+  catch(e){qinfo.textContent='The QR library could not load (check your connection). '+label}}
+q('#qmake').onclick=makeQR;qn.addEventListener('keydown',e=>{if(e.key==='Enter')makeQR()});
+
+let stream=null,timer=null,det=null,cool=0;const cvs=document.createElement('canvas');
+const say=(t,ok)=>{qres.textContent=t;qres.className='mres'+(ok===true?' ok':ok===false?' no':'')};
+const readLog=()=>{try{return JSON.parse(store.get('wed_checkins')||'{}')}catch(e){return{}}};
+function count(){q('#qcount').textContent=Object.keys(readLog()).length+' checked in on this device'}
+async function startScan(){
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){say('Camera is not available here. Open the invitation in its own browser tab.',false);return}
+  try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false})}catch(e){say('Camera access was blocked. Allow it in your browser and try again.',false);return}
+  vid.srcObject=stream;await vid.play().catch(()=>{});sbtn.textContent='Stop camera';say('Point the camera at a guest QR code.');
+  if('BarcodeDetector' in window){try{det=new BarcodeDetector({formats:['qr_code']})}catch(e){det=null}}
+  if(!det&&!window.jsQR){try{await loadJS(JSQR)}catch(e){say('The scanner library could not load.',false);stopScan();return}}
+  loop()}
+function loop(){timer=setTimeout(async()=>{if(!stream)return;let val=null;
+  try{if(vid.readyState>=2){if(det){const r=await det.detect(vid);if(r[0])val=r[0].rawValue}
+    else{const w=vid.videoWidth,h=vid.videoHeight,sc=Math.min(1,480/w);cvs.width=w*sc|0;cvs.height=h*sc|0;const c=cvs.getContext('2d',{willReadFrequently:true});c.drawImage(vid,0,0,cvs.width,cvs.height);const d=c.getImageData(0,0,cvs.width,cvs.height),r=window.jsQR(d.data,d.width,d.height);if(r)val=r.data}}}catch(e){}
+  if(val&&Date.now()>cool){cool=Date.now()+2200;handle(val)}loop()},140)}
+function stopScan(){clearTimeout(timer);timer=null;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}if(vid)vid.srcObject=null;if(sbtn)sbtn.textContent='Start camera'}
+function handle(v){const p=String(v).split('|');if(p[0]!=='WED'||p.length<5){say('This is not an invitation QR code.',false);return}
+  const code=p[2],name=p[3],n=p[4],log=readLog();if(log[code]){say('Already checked in at '+log[code].t+': '+name,false);return}
+  log[code]={name,n,t:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})};store.set('wed_checkins',JSON.stringify(log));
+  if(navigator.vibrate)navigator.vibrate(80);say('✓ Checked in: '+name+' · '+n+(+n>1?' guests':' guest'),true);count()}
+sbtn.onclick=()=>stream?stopScan():startScan();
+})();
 </script>
 </body>
 </html>
